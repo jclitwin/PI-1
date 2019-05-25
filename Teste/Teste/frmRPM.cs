@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using DevExpress.XtraGauges.Win;
 using DevExpress.XtraGauges.Win.Base;
 using DevExpress.XtraGauges.Core.Model;
 using DevExpress.XtraGauges.Base;
-using DevExpress.XtraGauges.Win.Gauges.Digital;
 
 namespace Teste
 {
@@ -88,12 +78,11 @@ namespace Teste
             var currValue = trackBarControl1.Value;
             var error = (currValue > 10) ? currValue - 10 : 0;
 
-            var value = ((float)random.Next(error, currValue)) / 100.0f;
-            float deviation = ((float)value - (scale as IConvertibleScale).Percent);
+            var value = (random.Next(error, currValue)) / 100.0f;
+            float deviation = (value - (scale as IConvertibleScale).Percent);
             return scale.Value + (scale.ScaleLength * 0.075f) * deviation;
         }
 
         #endregion
-
     }
 }

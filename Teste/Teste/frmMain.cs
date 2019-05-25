@@ -1,21 +1,22 @@
-﻿using DevExpress.XtraBars;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
+﻿using System;
+using IniParser;
+using IniParser.Model;
 using System.Management;
+using System.Windows.Forms;
+using System.IO;
+using DevExpress.XtraEditors;
+using System.Drawing;
 
 namespace Teste
 {
     public partial class frmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+        private readonly string CONFIG_FILE_NAME = "./config.ini";
+
         public frmMain()
         {
+            LoadConfig();
+
             InitializeComponent();
 
             if (!fluentDesignFormContainer1.Controls.Contains(frmHome.Instance))
@@ -26,9 +27,37 @@ namespace Teste
             }
         }
 
-        private void fluentDesignFormContainer1_Click(object sender, EventArgs e)
+        private bool LoadConfig()
         {
+            var parser = new FileIniDataParser();
+            if(File.Exists(CONFIG_FILE_NAME))
+            {
+                IniData data = parser.ReadFile(CONFIG_FILE_NAME);
+                if(data == null)
+                {
+                    XtraMessageBox.Show("Anormalia encontrada no arquivo de configuração.", "Aviso", MessageBoxButtons.OK);
+                    File.Delete(CONFIG_FILE_NAME);
 
+                    return false;
+                }
+
+                string port = data["Connection"]["Port"].Replace("\"", "");
+                int serial = Convert.ToInt32(data["Connection"]["Serial"]);
+
+                frmSetup.Instance.Port = port;
+                frmSetup.Instance.Serial = serial;
+
+                frmSetup.Instance.LoadSerialPort();
+                frmSetup.Instance.GetPort();
+                frmSetup.Instance.GetSerial();
+
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void accordionControlElement2_Click(object sender, EventArgs e)
