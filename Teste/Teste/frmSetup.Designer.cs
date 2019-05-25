@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
@@ -37,7 +38,14 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.frmSetuplayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.simpleButton2item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButton1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tabPane1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -45,18 +53,24 @@
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmSetuplayoutControl1ConvertedLayout)).BeginInit();
+            this.frmSetuplayoutControl1ConvertedLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton2item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(44)))));
             this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.AutoSize = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Location = new System.Drawing.Point(12, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(667, 47);
+            this.panelControl2.Size = new System.Drawing.Size(646, 43);
             this.panelControl2.TabIndex = 4;
             // 
             // labelControl2
@@ -74,13 +88,13 @@
             // tabPane1
             // 
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Location = new System.Drawing.Point(3, 56);
+            this.tabPane1.Location = new System.Drawing.Point(12, 59);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(667, 325);
+            this.tabPane1.RegularSize = new System.Drawing.Size(646, 359);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(667, 325);
+            this.tabPane1.Size = new System.Drawing.Size(646, 359);
             this.tabPane1.TabIndex = 5;
             this.tabPane1.Text = "Conexão";
             // 
@@ -92,7 +106,7 @@
             this.tabNavigationPage1.Controls.Add(this.labelControl1);
             this.tabNavigationPage1.Controls.Add(this.comboBoxEdit1);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(667, 296);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(646, 330);
             // 
             // comboBoxEdit2
             // 
@@ -141,28 +155,94 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(67, 399);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 422);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(245, 42);
+            this.simpleButton1.Size = new System.Drawing.Size(321, 22);
+            this.simpleButton1.StyleController = this.frmSetuplayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 6;
             this.simpleButton1.Text = "Salvar";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // frmSetuplayoutControl1ConvertedLayout
+            // 
+            this.frmSetuplayoutControl1ConvertedLayout.Controls.Add(this.simpleButton2);
+            this.frmSetuplayoutControl1ConvertedLayout.Controls.Add(this.simpleButton1);
+            this.frmSetuplayoutControl1ConvertedLayout.Controls.Add(this.tabPane1);
+            this.frmSetuplayoutControl1ConvertedLayout.Controls.Add(this.panelControl2);
+            this.frmSetuplayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmSetuplayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.frmSetuplayoutControl1ConvertedLayout.Name = "frmSetuplayoutControl1ConvertedLayout";
+            this.frmSetuplayoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(-990, 182, 650, 400);
+            this.frmSetuplayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
+            this.frmSetuplayoutControl1ConvertedLayout.Size = new System.Drawing.Size(670, 456);
+            this.frmSetuplayoutControl1ConvertedLayout.TabIndex = 8;
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(318, 399);
+            this.simpleButton2.Location = new System.Drawing.Point(337, 422);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(245, 42);
+            this.simpleButton2.Size = new System.Drawing.Size(321, 22);
+            this.simpleButton2.StyleController = this.frmSetuplayoutControl1ConvertedLayout;
             this.simpleButton2.TabIndex = 7;
             this.simpleButton2.Text = "Cancelar";
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.simpleButton2item,
+            this.simpleButton1item,
+            this.tabPane1item,
+            this.panelControl2item});
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(670, 456);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // simpleButton2item
+            // 
+            this.simpleButton2item.Control = this.simpleButton2;
+            this.simpleButton2item.Location = new System.Drawing.Point(325, 410);
+            this.simpleButton2item.Name = "simpleButton2item";
+            this.simpleButton2item.Size = new System.Drawing.Size(325, 26);
+            this.simpleButton2item.TextSize = new System.Drawing.Size(0, 0);
+            this.simpleButton2item.TextVisible = false;
+            // 
+            // simpleButton1item
+            // 
+            this.simpleButton1item.Control = this.simpleButton1;
+            this.simpleButton1item.Location = new System.Drawing.Point(0, 410);
+            this.simpleButton1item.Name = "simpleButton1item";
+            this.simpleButton1item.Size = new System.Drawing.Size(325, 26);
+            this.simpleButton1item.TextSize = new System.Drawing.Size(0, 0);
+            this.simpleButton1item.TextVisible = false;
+            // 
+            // tabPane1item
+            // 
+            this.tabPane1item.Control = this.tabPane1;
+            this.tabPane1item.Location = new System.Drawing.Point(0, 47);
+            this.tabPane1item.Name = "tabPane1item";
+            this.tabPane1item.Size = new System.Drawing.Size(650, 363);
+            this.tabPane1item.TextSize = new System.Drawing.Size(0, 0);
+            this.tabPane1item.TextVisible = false;
+            // 
+            // panelControl2item
+            // 
+            this.panelControl2item.Control = this.panelControl2;
+            this.panelControl2item.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2item.MaxSize = new System.Drawing.Size(0, 47);
+            this.panelControl2item.MinSize = new System.Drawing.Size(5, 47);
+            this.panelControl2item.Name = "panelControl2item";
+            this.panelControl2item.Size = new System.Drawing.Size(650, 47);
+            this.panelControl2item.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.panelControl2item.TextSize = new System.Drawing.Size(0, 0);
+            this.panelControl2item.TextVisible = false;
             // 
             // frmSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.tabPane1);
-            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.frmSetuplayoutControl1ConvertedLayout);
             this.Name = "frmSetup";
             this.Size = new System.Drawing.Size(670, 456);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -174,8 +254,14 @@
             this.tabNavigationPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmSetuplayoutControl1ConvertedLayout)).EndInit();
+            this.frmSetuplayoutControl1ConvertedLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton2item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -191,5 +277,12 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
+        private DevExpress.XtraLayout.LayoutControl frmSetuplayoutControl1ConvertedLayout;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem simpleButton2item;
+        private DevExpress.XtraLayout.LayoutControlItem simpleButton1item;
+        private DevExpress.XtraLayout.LayoutControlItem tabPane1item;
+        private DevExpress.XtraLayout.LayoutControlItem panelControl2item;
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange2 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange3 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange7 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange8 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange9 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -44,6 +44,12 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.frmRPMlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.sidePanel1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.gaugeControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge7)).BeginInit();
@@ -56,6 +62,12 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            this.sidePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmRPMlayoutControl1ConvertedLayout)).BeginInit();
+            this.frmRPMlayoutControl1ConvertedLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sidePanel1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).BeginInit();
             this.SuspendLayout();
             // 
             // gaugeControl1
@@ -67,14 +79,14 @@
             this.gaugeControl1.Controls.Add(this.labelControl1);
             this.gaugeControl1.Gauges.AddRange(new DevExpress.XtraGauges.Base.IGauge[] {
             this.circularGauge7});
-            this.gaugeControl1.Location = new System.Drawing.Point(3, 65);
+            this.gaugeControl1.Location = new System.Drawing.Point(3, 3);
             this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(515, 370);
+            this.gaugeControl1.Size = new System.Drawing.Size(498, 422);
             this.gaugeControl1.TabIndex = 0;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(18, 330);
+            this.textEdit1.Location = new System.Drawing.Point(19, 389);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(473, 20);
             this.textEdit1.TabIndex = 1;
@@ -94,7 +106,7 @@
             // 
             // circularGauge7
             // 
-            this.circularGauge7.Bounds = new System.Drawing.Rectangle(22, 56, 467, 254);
+            this.circularGauge7.Bounds = new System.Drawing.Rectangle(22, 56, 467, 314);
             this.circularGauge7.Name = "circularGauge7";
             this.circularGauge7.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
             this.arcScaleNeedleComponent1});
@@ -132,30 +144,30 @@
             this.arcScaleComponent1.Name = "scale1";
             this.arcScaleComponent1.RadiusX = 75F;
             this.arcScaleComponent1.RadiusY = 75F;
-            arcScaleRange1.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
-            arcScaleRange1.EndThickness = 6F;
-            arcScaleRange1.EndValue = 33F;
-            arcScaleRange1.Name = "Range0";
-            arcScaleRange1.ShapeOffset = 29F;
-            arcScaleRange1.StartThickness = 6F;
-            arcScaleRange2.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
-            arcScaleRange2.EndThickness = 6F;
-            arcScaleRange2.EndValue = 66F;
-            arcScaleRange2.Name = "Range1";
-            arcScaleRange2.ShapeOffset = 29F;
-            arcScaleRange2.StartThickness = 6F;
-            arcScaleRange2.StartValue = 33F;
-            arcScaleRange3.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
-            arcScaleRange3.EndThickness = 6F;
-            arcScaleRange3.EndValue = 100F;
-            arcScaleRange3.Name = "Range2";
-            arcScaleRange3.ShapeOffset = 29F;
-            arcScaleRange3.StartThickness = 6F;
-            arcScaleRange3.StartValue = 66F;
+            arcScaleRange7.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
+            arcScaleRange7.EndThickness = 6F;
+            arcScaleRange7.EndValue = 33F;
+            arcScaleRange7.Name = "Range0";
+            arcScaleRange7.ShapeOffset = 29F;
+            arcScaleRange7.StartThickness = 6F;
+            arcScaleRange8.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
+            arcScaleRange8.EndThickness = 6F;
+            arcScaleRange8.EndValue = 66F;
+            arcScaleRange8.Name = "Range1";
+            arcScaleRange8.ShapeOffset = 29F;
+            arcScaleRange8.StartThickness = 6F;
+            arcScaleRange8.StartValue = 33F;
+            arcScaleRange9.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
+            arcScaleRange9.EndThickness = 6F;
+            arcScaleRange9.EndValue = 100F;
+            arcScaleRange9.Name = "Range2";
+            arcScaleRange9.ShapeOffset = 29F;
+            arcScaleRange9.StartThickness = 6F;
+            arcScaleRange9.StartValue = 66F;
             this.arcScaleComponent1.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
-            arcScaleRange1,
-            arcScaleRange2,
-            arcScaleRange3});
+            arcScaleRange7,
+            arcScaleRange8,
+            arcScaleRange9});
             this.arcScaleComponent1.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("");
             this.arcScaleComponent1.StartAngle = -225F;
             // 
@@ -170,7 +182,7 @@
             // trackBarControl1
             // 
             this.trackBarControl1.EditValue = null;
-            this.trackBarControl1.Location = new System.Drawing.Point(20, 22);
+            this.trackBarControl1.Location = new System.Drawing.Point(19, 3);
             this.trackBarControl1.Name = "trackBarControl1";
             this.trackBarControl1.Properties.LabelAppearance.Options.UseTextOptions = true;
             this.trackBarControl1.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -178,7 +190,7 @@
             this.trackBarControl1.Properties.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBarControl1.Properties.ShowLabels = true;
             this.trackBarControl1.Properties.ShowValueToolTip = true;
-            this.trackBarControl1.Size = new System.Drawing.Size(45, 319);
+            this.trackBarControl1.Size = new System.Drawing.Size(45, 409);
             this.trackBarControl1.TabIndex = 1;
             // 
             // panelControl1
@@ -187,21 +199,20 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.trackBarControl1);
-            this.panelControl1.Location = new System.Drawing.Point(534, 65);
+            this.panelControl1.Location = new System.Drawing.Point(517, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(82, 370);
+            this.panelControl1.Size = new System.Drawing.Size(101, 425);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(44)))));
             this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.AutoSize = true;
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl2.Controls.Add(this.labelControl2);
-            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Location = new System.Drawing.Point(12, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(667, 47);
+            this.panelControl2.Size = new System.Drawing.Size(634, 38);
             this.panelControl2.TabIndex = 3;
             // 
             // labelControl2
@@ -220,15 +231,66 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // sidePanel1
+            // 
+            this.sidePanel1.Controls.Add(this.gaugeControl1);
+            this.sidePanel1.Controls.Add(this.panelControl1);
+            this.sidePanel1.Location = new System.Drawing.Point(12, 54);
+            this.sidePanel1.Name = "sidePanel1";
+            this.sidePanel1.Size = new System.Drawing.Size(634, 437);
+            this.sidePanel1.TabIndex = 4;
+            this.sidePanel1.Text = "sidePanel1";
+            // 
+            // frmRPMlayoutControl1ConvertedLayout
+            // 
+            this.frmRPMlayoutControl1ConvertedLayout.Controls.Add(this.sidePanel1);
+            this.frmRPMlayoutControl1ConvertedLayout.Controls.Add(this.panelControl2);
+            this.frmRPMlayoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frmRPMlayoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 0);
+            this.frmRPMlayoutControl1ConvertedLayout.Name = "frmRPMlayoutControl1ConvertedLayout";
+            this.frmRPMlayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
+            this.frmRPMlayoutControl1ConvertedLayout.Size = new System.Drawing.Size(658, 503);
+            this.frmRPMlayoutControl1ConvertedLayout.TabIndex = 5;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.sidePanel1item,
+            this.panelControl2item});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(658, 503);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // sidePanel1item
+            // 
+            this.sidePanel1item.Control = this.sidePanel1;
+            this.sidePanel1item.Location = new System.Drawing.Point(0, 42);
+            this.sidePanel1item.Name = "sidePanel1item";
+            this.sidePanel1item.Size = new System.Drawing.Size(638, 441);
+            this.sidePanel1item.TextSize = new System.Drawing.Size(0, 0);
+            this.sidePanel1item.TextVisible = false;
+            // 
+            // panelControl2item
+            // 
+            this.panelControl2item.Control = this.panelControl2;
+            this.panelControl2item.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2item.MaxSize = new System.Drawing.Size(0, 42);
+            this.panelControl2item.MinSize = new System.Drawing.Size(5, 42);
+            this.panelControl2item.Name = "panelControl2item";
+            this.panelControl2item.Size = new System.Drawing.Size(638, 42);
+            this.panelControl2item.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.panelControl2item.TextSize = new System.Drawing.Size(0, 0);
+            this.panelControl2item.TextVisible = false;
+            // 
             // frmRPM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.gaugeControl1);
+            this.Controls.Add(this.frmRPMlayoutControl1ConvertedLayout);
             this.Name = "frmRPM";
-            this.Size = new System.Drawing.Size(670, 456);
+            this.Size = new System.Drawing.Size(658, 503);
             this.gaugeControl1.ResumeLayout(false);
             this.gaugeControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
@@ -244,8 +306,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            this.sidePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.frmRPMlayoutControl1ConvertedLayout)).EndInit();
+            this.frmRPMlayoutControl1ConvertedLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sidePanel1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -263,5 +330,11 @@
         private DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleSpindleCapComponent arcScaleSpindleCapComponent1;
         private System.Windows.Forms.Timer timer1;
         private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
+        private DevExpress.XtraEditors.SidePanel sidePanel1;
+        private DevExpress.XtraLayout.LayoutControl frmRPMlayoutControl1ConvertedLayout;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem sidePanel1item;
+        private DevExpress.XtraLayout.LayoutControlItem panelControl2item;
     }
 }
