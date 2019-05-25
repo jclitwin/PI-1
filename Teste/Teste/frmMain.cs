@@ -57,14 +57,14 @@ namespace Teste
 
         private void accordionControlElement7_Click(object sender, EventArgs e)
         {
-            if (!fluentDesignFormContainer1.Controls.Contains(frmSpeed.Instance))
+            if (!fluentDesignFormContainer1.Controls.Contains(frmRPM.Instance))
             {
-                fluentDesignFormContainer1.Controls.Add(frmSpeed.Instance);
-                frmSpeed.Instance.Dock = DockStyle.Fill;
-                frmSpeed.Instance.BringToFront();
+                fluentDesignFormContainer1.Controls.Add(frmRPM.Instance);
+                frmRPM.Instance.Dock = DockStyle.Fill;
+                frmRPM.Instance.BringToFront();
             }
 
-            frmSpeed.Instance.BringToFront();
+            frmRPM.Instance.BringToFront();
         }
 
         private void GetSerialPort()

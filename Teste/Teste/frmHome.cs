@@ -30,6 +30,8 @@ namespace Teste
         public frmHome()
         {
             InitializeComponent();
+
+            labelControl5.Enabled = false;
         }
     }
 }

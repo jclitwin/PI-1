@@ -1,6 +1,6 @@
 ﻿namespace Teste
 {
-    partial class frmSpeed
+    partial class frmRPM
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange7 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange8 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange9 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange2 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange3 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.circularGauge7 = new DevExpress.XtraGauges.Win.Gauges.Circular.CircularGauge();
             this.arcScaleNeedleComponent1 = new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent();
@@ -43,8 +44,8 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.gaugeControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).BeginInit();
@@ -55,7 +56,6 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gaugeControl1
@@ -69,9 +69,15 @@
             this.circularGauge7});
             this.gaugeControl1.Location = new System.Drawing.Point(3, 65);
             this.gaugeControl1.Name = "gaugeControl1";
-            this.gaugeControl1.Size = new System.Drawing.Size(417, 370);
+            this.gaugeControl1.Size = new System.Drawing.Size(515, 370);
             this.gaugeControl1.TabIndex = 0;
-            this.gaugeControl1.Click += new System.EventHandler(this.gaugeControl1_Click);
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(18, 330);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(473, 20);
+            this.textEdit1.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -88,7 +94,7 @@
             // 
             // circularGauge7
             // 
-            this.circularGauge7.Bounds = new System.Drawing.Rectangle(43, 52, 337, 254);
+            this.circularGauge7.Bounds = new System.Drawing.Rectangle(22, 56, 467, 254);
             this.circularGauge7.Name = "circularGauge7";
             this.circularGauge7.Needles.AddRange(new DevExpress.XtraGauges.Win.Gauges.Circular.ArcScaleNeedleComponent[] {
             this.arcScaleNeedleComponent1});
@@ -126,33 +132,32 @@
             this.arcScaleComponent1.Name = "scale1";
             this.arcScaleComponent1.RadiusX = 75F;
             this.arcScaleComponent1.RadiusY = 75F;
-            arcScaleRange7.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
-            arcScaleRange7.EndThickness = 6F;
-            arcScaleRange7.EndValue = 33F;
-            arcScaleRange7.Name = "Range0";
-            arcScaleRange7.ShapeOffset = 29F;
-            arcScaleRange7.StartThickness = 6F;
-            arcScaleRange8.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
-            arcScaleRange8.EndThickness = 6F;
-            arcScaleRange8.EndValue = 66F;
-            arcScaleRange8.Name = "Range1";
-            arcScaleRange8.ShapeOffset = 29F;
-            arcScaleRange8.StartThickness = 6F;
-            arcScaleRange8.StartValue = 33F;
-            arcScaleRange9.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
-            arcScaleRange9.EndThickness = 6F;
-            arcScaleRange9.EndValue = 100F;
-            arcScaleRange9.Name = "Range2";
-            arcScaleRange9.ShapeOffset = 29F;
-            arcScaleRange9.StartThickness = 6F;
-            arcScaleRange9.StartValue = 66F;
+            arcScaleRange1.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
+            arcScaleRange1.EndThickness = 6F;
+            arcScaleRange1.EndValue = 33F;
+            arcScaleRange1.Name = "Range0";
+            arcScaleRange1.ShapeOffset = 29F;
+            arcScaleRange1.StartThickness = 6F;
+            arcScaleRange2.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
+            arcScaleRange2.EndThickness = 6F;
+            arcScaleRange2.EndValue = 66F;
+            arcScaleRange2.Name = "Range1";
+            arcScaleRange2.ShapeOffset = 29F;
+            arcScaleRange2.StartThickness = 6F;
+            arcScaleRange2.StartValue = 33F;
+            arcScaleRange3.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
+            arcScaleRange3.EndThickness = 6F;
+            arcScaleRange3.EndValue = 100F;
+            arcScaleRange3.Name = "Range2";
+            arcScaleRange3.ShapeOffset = 29F;
+            arcScaleRange3.StartThickness = 6F;
+            arcScaleRange3.StartValue = 66F;
             this.arcScaleComponent1.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
-            arcScaleRange7,
-            arcScaleRange8,
-            arcScaleRange9});
+            arcScaleRange1,
+            arcScaleRange2,
+            arcScaleRange3});
             this.arcScaleComponent1.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("");
             this.arcScaleComponent1.StartAngle = -225F;
-            this.arcScaleComponent1.Value = 50F;
             // 
             // arcScaleSpindleCapComponent1
             // 
@@ -182,7 +187,7 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.trackBarControl1);
-            this.panelControl1.Location = new System.Drawing.Point(442, 65);
+            this.panelControl1.Location = new System.Drawing.Point(534, 65);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(82, 370);
             this.panelControl1.TabIndex = 2;
@@ -215,25 +220,18 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(43, 329);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(340, 20);
-            this.textEdit1.TabIndex = 1;
-            // 
-            // frmSpeed
+            // frmRPM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.gaugeControl1);
-            this.Name = "frmSpeed";
+            this.Name = "frmRPM";
             this.Size = new System.Drawing.Size(670, 456);
-            this.Load += new System.EventHandler(this.frmSpeed_Load);
             this.gaugeControl1.ResumeLayout(false);
             this.gaugeControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleNeedleComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arcScaleComponent1)).EndInit();
@@ -246,7 +244,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

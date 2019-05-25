@@ -81,11 +81,11 @@
     <Compile Include="frmSetup.Designer.cs">
       <DependentUpon>frmSetup.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSpeed.cs">
+    <Compile Include="frmRPM.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="frmSpeed.Designer.cs">
-      <DependentUpon>frmSpeed.cs</DependentUpon>
+    <Compile Include="frmRPM.Designer.cs">
+      <DependentUpon>frmRPM.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="frmSetup.resx">
       <DependentUpon>frmSetup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSpeed.resx">
-      <DependentUpon>frmSpeed.cs</DependentUpon>
+    <EmbeddedResource Include="frmRPM.resx">
+      <DependentUpon>frmRPM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -16,21 +16,21 @@ using DevExpress.XtraGauges.Win.Gauges.Digital;
 
 namespace Teste
 {
-    public partial class frmSpeed : DevExpress.XtraEditors.XtraUserControl
+    public partial class frmRPM : DevExpress.XtraEditors.XtraUserControl
     {
-        private static frmSpeed _instance;
-        public static frmSpeed Instance
+        private static frmRPM _instance;
+        public static frmRPM Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new frmSpeed();
+                    _instance = new frmRPM();
 
                 return _instance;
             }
         }
 
-        public frmSpeed()
+        public frmRPM()
         {
             InitializeComponent();
 
@@ -38,16 +38,6 @@ namespace Teste
             timer1.Tick += new EventHandler(timer1_Tick);
 
             timer1.Start();
-        }
-
-        private void frmSpeed_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gaugeControl1_Click(object sender, EventArgs e)
-        {
-
         }
 
         #region Animation
@@ -95,16 +85,15 @@ namespace Teste
 
         float AnimateScaleValue(IScale scale)
         {
-            float deviation = ((float)random.NextDouble() - (scale as IConvertibleScale).Percent);
-            return scale.Value + (scale.ScaleLength * 0.025f) * deviation;
-        }
+            var currValue = trackBarControl1.Value;
+            var error = (currValue > 10) ? currValue - 10 : 0;
 
-        string AnimateStringValue(DigitalGauge dGauge)
-        {
-            int value = DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
-            return value.ToString();
+            var value = ((float)random.Next(error, currValue)) / 100.0f;
+            float deviation = ((float)value - (scale as IConvertibleScale).Percent);
+            return scale.Value + (scale.ScaleLength * 0.075f) * deviation;
         }
 
         #endregion
+
     }
 }
