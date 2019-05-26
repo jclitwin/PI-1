@@ -121,11 +121,6 @@ namespace Teste
 
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void accordionControlElement8_Click(object sender, EventArgs e)
         {
             if (!fluentDesignFormContainer1.Controls.Contains(frmAnalyzeRPM.Instance))

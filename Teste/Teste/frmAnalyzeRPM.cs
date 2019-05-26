@@ -31,22 +31,16 @@ namespace Teste
         public frmAnalyzeRPM()
         {
             InitializeComponent();
-            //chartControl1.BeginInit();
-            //
-            //chartControl1.EndInit();
 
-            timer1.Interval = 166;
+            chartControl1.BeginInit();
+            chartControl1.EndInit();
+
+            timer1.Interval = 200;
             timer1.Tick += new EventHandler(timer1_Tick);
 
             timer1.Start();
 
             _rnd = new Random();
-
-
-            SwiftPlotDiagramAxisX axisX = ((SwiftPlotDiagram)chartControl1.Diagram).AxisX;
-            //axisX.VisualRange.SetMinMaxValues((DateTime)axisX.WholeRange.MaxValue - new TimeSpan(0, 0, 10), ((DateTime)axisX.WholeRange.MaxValue).AddSeconds(1));
-            axisX.VisualRange.SetMinMaxValues(0, 3);
-
         }
 
         void timer1_Tick(object sender, EventArgs e)
@@ -57,7 +51,6 @@ namespace Teste
         public void SetData(double value)
         {
             chartControl1.Series["RPM"].Points.AddPoint(DateTime.Now, value);
-
         }
     }
 }
