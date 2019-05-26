@@ -77,7 +77,7 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Location = new System.Drawing.Point(132, 232);
+            this.panelControl1.Location = new System.Drawing.Point(3, 75);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(182, 116);
             this.panelControl1.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.panelControl3.Controls.Add(this.labelControl6);
             this.panelControl3.Controls.Add(this.labelControl5);
             this.panelControl3.Controls.Add(this.labelControl4);
-            this.panelControl3.Location = new System.Drawing.Point(132, 160);
+            this.panelControl3.Location = new System.Drawing.Point(3, 3);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(182, 66);
             this.panelControl3.TabIndex = 6;
@@ -162,7 +162,7 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.groupControl1item});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(670, 456);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -215,7 +215,7 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(17, 6);
+            this.labelControl2.Location = new System.Drawing.Point(18, 6);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 25);
             this.labelControl2.TabIndex = 0;

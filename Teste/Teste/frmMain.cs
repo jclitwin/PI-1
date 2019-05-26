@@ -125,5 +125,17 @@ namespace Teste
         {
 
         }
+
+        private void accordionControlElement8_Click(object sender, EventArgs e)
+        {
+            if (!fluentDesignFormContainer1.Controls.Contains(frmAnalyzeRPM.Instance))
+            {
+                fluentDesignFormContainer1.Controls.Add(frmAnalyzeRPM.Instance);
+                frmAnalyzeRPM.Instance.Dock = DockStyle.Fill;
+                frmAnalyzeRPM.Instance.BringToFront();
+            }
+
+            frmAnalyzeRPM.Instance.BringToFront();
+        }
     }
 }
