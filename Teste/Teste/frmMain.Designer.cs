@@ -35,6 +35,8 @@
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -88,7 +90,9 @@
             // accordionControlElement3
             // 
             this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement8});
+            this.accordionControlElement8,
+            this.accordionControlElement6,
+            this.accordionControlElement9});
             this.accordionControlElement3.Expanded = true;
             this.accordionControlElement3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement3.ImageOptions.SvgImage")));
             this.accordionControlElement3.Name = "accordionControlElement3";
@@ -101,11 +105,23 @@
             this.accordionControlElement8.Text = "RPM";
             this.accordionControlElement8.Click += new System.EventHandler(this.accordionControlElement8_Click);
             // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Tração";
+            // 
+            // accordionControlElement9
+            // 
+            this.accordionControlElement9.Name = "accordionControlElement9";
+            this.accordionControlElement9.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement9.Text = "Torque";
+            this.accordionControlElement9.Click += new System.EventHandler(this.accordionControlElement9_Click);
+            // 
             // accordionControlElement4
             // 
             this.accordionControlElement4.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement7});
-            this.accordionControlElement4.Expanded = true;
             this.accordionControlElement4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement4.ImageOptions.SvgImage")));
             this.accordionControlElement4.Name = "accordionControlElement4";
             this.accordionControlElement4.Text = "Controlador";
@@ -170,6 +186,8 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement7;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement8;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
     }
 }
 
