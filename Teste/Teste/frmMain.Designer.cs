@@ -103,7 +103,6 @@
             this.accordionControlElement8,
             this.accordionControlElement6,
             this.accordionControlElement9});
-            this.accordionControlElement3.Expanded = true;
             this.accordionControlElement3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("accordionControlElement3.ImageOptions.SvgImage")));
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "Análise";
