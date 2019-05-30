@@ -168,5 +168,17 @@ namespace Teste
 
             frmConnection.Instance.BringToFront();
         }
+
+        private void accordionControlElement6_Click(object sender, EventArgs e)
+        {
+            if (!fluentDesignFormContainer1.Controls.Contains(frmAnalyzeTraction.Instance))
+            {
+                fluentDesignFormContainer1.Controls.Add(frmAnalyzeTraction.Instance);
+                frmAnalyzeTraction.Instance.Dock = DockStyle.Fill;
+                frmAnalyzeTraction.Instance.BringToFront();
+            }
+
+            frmAnalyzeTraction.Instance.BringToFront();
+        }
     }
 }

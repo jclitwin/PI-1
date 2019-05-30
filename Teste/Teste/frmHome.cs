@@ -31,21 +31,21 @@ namespace Teste
         {
             InitializeComponent();
 
-            labelControl5.Enabled = false;
-            labelControl6.Enabled = true;
+            labelControl5.Hide();
+            labelControl6.Show();
         }
 
         public void UpdateStatusConnect(bool isConnected)
         {
             if(isConnected)
             {
-                labelControl5.Enabled = true;
-                labelControl6.Enabled = false;
+                labelControl5.Show();
+                labelControl6.Hide();
             }
             else
             {
-                labelControl5.Enabled = false;
-                labelControl6.Enabled = true;
+                labelControl5.Hide();
+                labelControl6.Show();
             }
         }
     }

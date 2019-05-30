@@ -26,7 +26,7 @@ namespace Teste
             }
         }
 
-        Random _rnd;
+        //Random _rnd;
 
         public frmAnalyzeRPM()
         {
@@ -35,18 +35,18 @@ namespace Teste
             chartControl1.BeginInit();
             chartControl1.EndInit();
 
-            timer1.Interval = 200;
-            timer1.Tick += new EventHandler(timer1_Tick);
-
-            timer1.Start();
-
-            _rnd = new Random();
+            //timer1.Interval = 200;
+            //timer1.Tick += new EventHandler(timer1_Tick);
+            //
+            //timer1.Start();
+            //
+            //_rnd = new Random();
         }
 
-        void timer1_Tick(object sender, EventArgs e)
-        {
-            SetData(_rnd.Next(100, 500) + _rnd.NextDouble());
-        }
+        //void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    SetData(_rnd.Next(100, 500) + _rnd.NextDouble());
+        //}
 
         public void SetData(double value)
         {

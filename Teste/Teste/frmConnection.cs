@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using System.IO.Ports;
 using System.Threading;
 
@@ -28,12 +20,14 @@ namespace Teste
         }
 
         SerialPort serial;
-        SynchronizationContext sync;
+        SynchronizationContext sync = null;
 
-        int ldrValue = 0;
+        double ldrValue = 0;
         double celCarga = 0.0;
         string msg;
         char typeReceiveMsg;
+
+        public bool connected = false;
 
         public frmConnection()
         {
@@ -56,8 +50,11 @@ namespace Teste
                 serial.Handshake = Handshake.None;
 
                 serial.Open();
-                if(serial.IsOpen)
+                if (serial.IsOpen)
+                {
                     Log("Port is open.");
+                    connected = true;
+                }
 
                 simpleButton2.Enabled = true;
                 simpleButton1.Enabled = false;
@@ -75,6 +72,8 @@ namespace Teste
             Cursor.Current = Cursors.WaitCursor;
             try
             {
+                connected = false;
+
                 Log("Desconnecting...");
 
                 serial.Close();
@@ -105,12 +104,12 @@ namespace Teste
 
             if (typeReceiveMsg == 'L')
             {
-                ldrValue = Convert.ToInt32(msg);
+                ldrValue = Convert.ToDouble(msg);
 
                 sync.Post(f =>
                 {
                     Log("L: " + Convert.ToString(ldrValue));
-                    //textBoxLDRValue.Text = Convert.ToString(ldrValue);
+                    frmAnalyzeRPM.Instance.SetData(ldrValue);
                 }, ldrValue);
 
             }
@@ -122,6 +121,7 @@ namespace Teste
                 {
                     Log("A: " + Convert.ToString(celCarga));
                     //textBoxCargaA.Text = Convert.ToString(celCarga);
+                    frmAnalyzeTorque.Instance.SetData(celCarga);
                 }, celCarga);
             }
 
@@ -133,10 +133,9 @@ namespace Teste
                 {
                     Log("B: " + Convert.ToString(celCarga));
                     //textBoxCargaB.Text = Convert.ToString(celCarga);
+                    frmAnalyzeTraction.Instance.SetData(celCarga);
                 }, celCarga);
             }
-
-            //ShowLog(Convert.ToString(ldrValue));
         }
     }
 }

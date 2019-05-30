@@ -133,9 +133,9 @@
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Location = new System.Drawing.Point(65, 32);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(58, 71);
+            this.labelControl3.Size = new System.Drawing.Size(29, 71);
             this.labelControl3.TabIndex = 1;
-            this.labelControl3.Text = "99";
+            this.labelControl3.Text = "0";
             // 
             // labelControl1
             // 

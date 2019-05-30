@@ -11,15 +11,15 @@ using DevExpress.XtraEditors;
 
 namespace Teste
 {
-    public partial class frmAnalyzeTorque : DevExpress.XtraEditors.XtraUserControl
+    public partial class frmAnalyzeTraction : DevExpress.XtraEditors.XtraUserControl
     {
-        private static frmAnalyzeTorque _instance;
-        public static frmAnalyzeTorque Instance
+        private static frmAnalyzeTraction _instance;
+        public static frmAnalyzeTraction Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new frmAnalyzeTorque();
+                    _instance = new frmAnalyzeTraction();
 
                 return _instance;
             }
@@ -27,7 +27,7 @@ namespace Teste
 
         //Random _rnd;
 
-        public frmAnalyzeTorque()
+        public frmAnalyzeTraction()
         {
             InitializeComponent();
 
@@ -49,7 +49,7 @@ namespace Teste
 
         public void SetData(double value)
         {
-            chartControl1.Series["Torque"].Points.AddPoint(DateTime.Now, value);
+            chartControl1.Series["Traction"].Points.AddPoint(DateTime.Now, value);
         }
     }
 }
