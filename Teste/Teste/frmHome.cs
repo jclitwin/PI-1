@@ -32,6 +32,21 @@ namespace Teste
             InitializeComponent();
 
             labelControl5.Enabled = false;
+            labelControl6.Enabled = true;
+        }
+
+        public void UpdateStatusConnect(bool isConnected)
+        {
+            if(isConnected)
+            {
+                labelControl5.Enabled = true;
+                labelControl6.Enabled = false;
+            }
+            else
+            {
+                labelControl5.Enabled = false;
+                labelControl6.Enabled = true;
+            }
         }
     }
 }

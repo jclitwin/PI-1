@@ -144,5 +144,29 @@ namespace Teste
 
             frmAnalyzeTorque.Instance.BringToFront();
         }
+
+        private void accordionControlElement10_Click(object sender, EventArgs e)
+        {
+            if (!fluentDesignFormContainer1.Controls.Contains(frmConnection.Instance))
+            {
+                fluentDesignFormContainer1.Controls.Add(frmConnection.Instance);
+                frmConnection.Instance.Dock = DockStyle.Fill;
+                frmConnection.Instance.BringToFront();
+            }
+
+            frmConnection.Instance.BringToFront();
+        }
+
+        private void accordionControlElement11_Click(object sender, EventArgs e)
+        {
+            if (!fluentDesignFormContainer1.Controls.Contains(frmConnection.Instance))
+            {
+                fluentDesignFormContainer1.Controls.Add(frmConnection.Instance);
+                frmConnection.Instance.Dock = DockStyle.Fill;
+                frmConnection.Instance.BringToFront();
+            }
+
+            frmConnection.Instance.BringToFront();
+        }
     }
 }

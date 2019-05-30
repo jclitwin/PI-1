@@ -79,6 +79,12 @@
     <Compile Include="frmAnalyzeTorque.Designer.cs">
       <DependentUpon>frmAnalyzeTorque.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConnection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmConnection.Designer.cs">
+      <DependentUpon>frmConnection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAnalyzeTorque.resx">
       <DependentUpon>frmAnalyzeTorque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConnection.resx">
+      <DependentUpon>frmConnection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
