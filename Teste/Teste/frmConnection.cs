@@ -56,10 +56,11 @@ namespace Teste
                     connected = true;
                 }
 
-                simpleButton2.Enabled = true;
-                simpleButton1.Enabled = false;
+                simpleButton2.Enabled = connected;
+                simpleButton1.Enabled = !connected;
 
-                frmHome.Instance.UpdateStatusConnect(true);
+                frmHome.Instance.UpdateStatusConnect(connected);
+                frmRPM.Instance.EnableTrackBar(connected);
             }
             catch (Exception ex)
             {
@@ -78,10 +79,11 @@ namespace Teste
 
                 serial.Close();
 
-                simpleButton2.Enabled = false;
-                simpleButton1.Enabled = true;
+                simpleButton2.Enabled = connected;
+                simpleButton1.Enabled = !connected;
 
-                frmHome.Instance.UpdateStatusConnect(false);
+                frmHome.Instance.UpdateStatusConnect(connected);
+                frmRPM.Instance.EnableTrackBar(connected);
             }
             catch (Exception ex)
             {
@@ -136,6 +138,11 @@ namespace Teste
                     frmAnalyzeTraction.Instance.SetData(celCarga);
                 }, celCarga);
             }
+        }
+
+        public void SendRPM(double value)
+        {
+            serial.Write(Convert.ToString(value) + '\n');
         }
     }
 }

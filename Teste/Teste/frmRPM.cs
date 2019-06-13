@@ -26,13 +26,17 @@ namespace Teste
 
             timer1.Interval = 166;
             timer1.Tick += new EventHandler(timer1_Tick);
-
+            
             timer1.Start();
+
+            trackBarControl1.Enabled = false;
         }
 
         #region Animation
         int animationLockCounterCore = 0;
         Random random = new Random(DateTime.Now.Millisecond);
+
+        public double currentRPM = 0;
 
         bool IsAnimationLocked { get { return animationLockCounterCore > 0; } }
         void timer1_Tick(object sender, EventArgs e)
@@ -85,5 +89,15 @@ namespace Teste
 
         #endregion
 
+        private void trackBarControl1_EditValueChanged(object sender, EventArgs e)
+        {
+            if(frmConnection.Instance.connected)
+                frmConnection.Instance.SendRPM(trackBarControl1.Value);
+        }
+
+        public void EnableTrackBar(bool enable)
+        {
+            trackBarControl1.Enabled = enable;
+        }
     }
 }

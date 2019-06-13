@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange13 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange14 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange15 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange4 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange5 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange6 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -42,14 +41,14 @@
             this.trackBarControl1 = new DevExpress.XtraEditors.TrackBarControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.frmRPMlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.sidePanel1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gaugeControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.circularGauge7)).BeginInit();
@@ -144,30 +143,30 @@
             this.arcScaleComponent1.Name = "scale1";
             this.arcScaleComponent1.RadiusX = 75F;
             this.arcScaleComponent1.RadiusY = 75F;
-            arcScaleRange13.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
-            arcScaleRange13.EndThickness = 6F;
-            arcScaleRange13.EndValue = 33F;
-            arcScaleRange13.Name = "Range0";
-            arcScaleRange13.ShapeOffset = 29F;
-            arcScaleRange13.StartThickness = 6F;
-            arcScaleRange14.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
-            arcScaleRange14.EndThickness = 6F;
-            arcScaleRange14.EndValue = 66F;
-            arcScaleRange14.Name = "Range1";
-            arcScaleRange14.ShapeOffset = 29F;
-            arcScaleRange14.StartThickness = 6F;
-            arcScaleRange14.StartValue = 33F;
-            arcScaleRange15.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
-            arcScaleRange15.EndThickness = 6F;
-            arcScaleRange15.EndValue = 100F;
-            arcScaleRange15.Name = "Range2";
-            arcScaleRange15.ShapeOffset = 29F;
-            arcScaleRange15.StartThickness = 6F;
-            arcScaleRange15.StartValue = 66F;
+            arcScaleRange4.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
+            arcScaleRange4.EndThickness = 6F;
+            arcScaleRange4.EndValue = 33F;
+            arcScaleRange4.Name = "Range0";
+            arcScaleRange4.ShapeOffset = 29F;
+            arcScaleRange4.StartThickness = 6F;
+            arcScaleRange5.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
+            arcScaleRange5.EndThickness = 6F;
+            arcScaleRange5.EndValue = 66F;
+            arcScaleRange5.Name = "Range1";
+            arcScaleRange5.ShapeOffset = 29F;
+            arcScaleRange5.StartThickness = 6F;
+            arcScaleRange5.StartValue = 33F;
+            arcScaleRange6.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
+            arcScaleRange6.EndThickness = 6F;
+            arcScaleRange6.EndValue = 100F;
+            arcScaleRange6.Name = "Range2";
+            arcScaleRange6.ShapeOffset = 29F;
+            arcScaleRange6.StartThickness = 6F;
+            arcScaleRange6.StartValue = 66F;
             this.arcScaleComponent1.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
-            arcScaleRange13,
-            arcScaleRange14,
-            arcScaleRange15});
+            arcScaleRange4,
+            arcScaleRange5,
+            arcScaleRange6});
             this.arcScaleComponent1.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("");
             this.arcScaleComponent1.StartAngle = -225F;
             // 
@@ -192,6 +191,7 @@
             this.trackBarControl1.Properties.ShowValueToolTip = true;
             this.trackBarControl1.Size = new System.Drawing.Size(45, 409);
             this.trackBarControl1.TabIndex = 1;
+            this.trackBarControl1.EditValueChanged += new System.EventHandler(this.trackBarControl1_EditValueChanged);
             // 
             // panelControl1
             // 
@@ -214,6 +214,18 @@
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(634, 38);
             this.panelControl2.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(18, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(164, 25);
+            this.labelControl2.TabIndex = 1;
+            this.labelControl2.Text = "Controlador > RPM";
             // 
             // timer1
             // 
@@ -271,18 +283,6 @@
             this.panelControl2item.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.panelControl2item.TextSize = new System.Drawing.Size(0, 0);
             this.panelControl2item.TextVisible = false;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(18, 6);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(164, 25);
-            this.labelControl2.TabIndex = 1;
-            this.labelControl2.Text = "Controlador > RPM";
             // 
             // frmRPM
             // 
