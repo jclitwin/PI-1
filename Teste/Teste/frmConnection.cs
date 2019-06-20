@@ -22,17 +22,17 @@ namespace Teste
         SerialPort serial;
         SynchronizationContext sync = null;
 
-        double ldrValue = 0;
-        double celCarga = 0.0;
+        double torque = 0.0;
+        double tracao = 0.0;
+        int rpm = 0;
         string msg;
-        char typeReceiveMsg;
 
         public bool connected = false;
 
         public frmConnection()
         {
             InitializeComponent();
-
+            sync = SynchronizationContext.Current;
             simpleButton2.Enabled = false;
         }
 
@@ -42,7 +42,8 @@ namespace Teste
             try
             {
                 Log("Connecting...");
-                serial = new SerialPort(frmSetup.Instance.Port, frmSetup.Instance.Serial);
+                //serial = new SerialPort(frmSetup.Instance.Port, frmSetup.Instance.Serial);
+                serial = new SerialPort("COM8", 9600);
                 serial.DataReceived += new SerialDataReceivedEventHandler(portDataReceived);
                 serial.Parity = Parity.None;
                 serial.StopBits = StopBits.One;
@@ -99,43 +100,31 @@ namespace Teste
         {
             SerialPort sp1 = (SerialPort)sender;
             msg = sp1.ReadLine();
-            typeReceiveMsg = msg[0];
-            msg = msg.Substring(1);
+            string[] datas = msg.Split(';');
 
-            if (typeReceiveMsg == 'L')
+            torque = Convert.ToDouble(datas[0]);
+            tracao = Convert.ToDouble(datas[1]);
+            rpm = Convert.ToInt32(datas[2]);
+
+            sync.Post(f =>
             {
-                ldrValue = Convert.ToDouble(msg);
+                Log("Torque: " + Convert.ToString(torque));
+                frmAnalyzeTorque.Instance.SetData(torque);
+            }, torque);
 
-                sync.Post(f =>
-                {
-                    Log("L: " + Convert.ToString(ldrValue));
-                    frmAnalyzeRPM.Instance.SetData(ldrValue);
-                }, ldrValue);
 
-            }
-            if (typeReceiveMsg == 'A')
+            sync.Post(f =>
             {
-                celCarga = Convert.ToDouble(msg);
+                Log("Tração: " + Convert.ToString(tracao));
+                frmAnalyzeTraction.Instance.SetData(tracao);
+            }, tracao);
 
-                sync.Post(f =>
-                {
-                    Log("A: " + Convert.ToString(celCarga));
-                    //textBoxCargaA.Text = Convert.ToString(celCarga);
-                    frmAnalyzeTorque.Instance.SetData(celCarga);
-                }, celCarga);
-            }
-
-            if (typeReceiveMsg == 'B')
+            sync.Post(f =>
             {
-                celCarga = Convert.ToDouble(msg);
+                Log("RPM: " + Convert.ToString(rpm));
+                frmAnalyzeRPM.Instance.SetData(rpm);
+            }, rpm);
 
-                sync.Post(f =>
-                {
-                    Log("B: " + Convert.ToString(celCarga));
-                    //textBoxCargaB.Text = Convert.ToString(celCarga);
-                    frmAnalyzeTraction.Instance.SetData(celCarga);
-                }, celCarga);
-            }
         }
     }
 }
