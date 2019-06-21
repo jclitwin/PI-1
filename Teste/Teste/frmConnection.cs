@@ -96,36 +96,43 @@ namespace Teste
         {
             string msg = string.Format("[{0}]: {1}\r\n", DateTime.Now, log);
             memoEdit2.Text += msg;
+            memoEdit2.SelectionStart = memoEdit2.Text.Length;
+            memoEdit2.ScrollToCaret();
         }
 
         private void portDataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp1 = (SerialPort)sender;
             msg = sp1.ReadLine();
-            string[] datas = msg.Split(';');
 
-            torque = Convert.ToDouble(datas[0]);
-            tracao = Convert.ToDouble(datas[1]);
-            rpm = Convert.ToInt32(datas[2]);
-
-            sync.Post(f =>
+            if (msg[0] == ' ')
             {
-                Log("Torque: " + Convert.ToString(torque));
-                frmAnalyzeTorque.Instance.SetData(torque);
-            }, torque);
+                msg = msg.Substring(1);
+                string[] datas = msg.Split(';');
+
+                torque = Convert.ToDouble(datas[0]);
+                tracao = Convert.ToDouble(datas[1]);
+                rpm = Convert.ToInt32(datas[2]);
+
+                sync.Post(f =>
+                {
+                    Log("Torque: " + Convert.ToString(torque));
+                    frmAnalyzeTorque.Instance.SetData(torque);
+                }, torque);
 
 
-            sync.Post(f =>
-            {
-                Log("Tração: " + Convert.ToString(tracao));
-                frmAnalyzeTraction.Instance.SetData(tracao);
-            }, tracao);
+                sync.Post(f =>
+                {
+                    Log("Tração: " + Convert.ToString(tracao));
+                    frmAnalyzeTraction.Instance.SetData(tracao);
+                }, tracao);
 
-            sync.Post(f =>
-            {
-                Log("RPM: " + Convert.ToString(rpm));
-                frmAnalyzeRPM.Instance.SetData(rpm);
-            }, rpm);
+                sync.Post(f =>
+                {
+                    Log("RPM: " + Convert.ToString(rpm));
+                    frmAnalyzeRPM.Instance.SetData(rpm);
+                }, rpm);
+            }
 
         }
 
