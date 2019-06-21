@@ -44,6 +44,7 @@
             this.sidePanel1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sidePanel1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel1
@@ -74,6 +76,7 @@
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(44)))));
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl1.Controls.Add(this.textEdit1);
             this.panelControl1.Controls.Add(this.chartControl1);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Location = new System.Drawing.Point(3, 3);
@@ -183,6 +186,13 @@
             this.panelControl2item.TextSize = new System.Drawing.Size(0, 0);
             this.panelControl2item.TextVisible = false;
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(477, 82);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(88, 20);
+            this.textEdit1.TabIndex = 12;
+            // 
             // frmAnalyzeTorque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sidePanel1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,5 +235,6 @@
         private DevExpress.XtraLayout.LayoutControlItem sidePanel1item;
         private DevExpress.XtraLayout.LayoutControlItem panelControl2item;
         private System.Windows.Forms.Timer timer1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
     }
 }

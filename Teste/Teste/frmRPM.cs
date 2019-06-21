@@ -26,7 +26,7 @@ namespace Teste
 
             timer1.Interval = 166;
             timer1.Tick += new EventHandler(timer1_Tick);
-            
+
             timer1.Start();
 
             trackBarControl1.Enabled = false;
@@ -84,13 +84,16 @@ namespace Teste
 
             var value = (random.Next(error, currValue)) / 100.0f;
             float deviation = (value - (scale as IConvertibleScale).Percent);
-            return scale.Value + (scale.ScaleLength * 0.075f) * deviation;
+            //return scale.Value + (scale.ScaleLength * 0.075f) * deviation;
+
+            return trackBarControl1.Value;
         }
 
         #endregion
 
         private void trackBarControl1_EditValueChanged(object sender, EventArgs e)
         {
+            Console.WriteLine(trackBarControl1.Value);
             if(frmConnection.Instance.connected)
                 frmConnection.Instance.SendRPM(trackBarControl1.Value);
         }

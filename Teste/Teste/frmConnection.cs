@@ -138,7 +138,9 @@ namespace Teste
 
         public void SendRPM(double value)
         {
-            serial.Write(Convert.ToString(value) + '\n');
+            int speedValue = Convert.ToInt32((Convert.ToInt32(value) * 100) / 9.7751711);
+            serial.Write(Convert.ToString(speedValue) + '\n');
+            //serial.Write(Convert.ToString(value) + '\n');
         }
     }
 }

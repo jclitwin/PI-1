@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Threading;
 
 namespace Teste
 {
@@ -26,10 +27,13 @@ namespace Teste
         }
 
         //Random _rnd;
+        SynchronizationContext sync = null;
 
         public frmAnalyzeTorque()
         {
             InitializeComponent();
+
+            sync = SynchronizationContext.Current;
 
             chartControl1.BeginInit();
             chartControl1.EndInit();
@@ -50,6 +54,10 @@ namespace Teste
         public void SetData(double value)
         {
             chartControl1.Series["Torque"].Points.AddPoint(DateTime.Now, value);
+            sync.Post(f =>
+            {
+                textEdit1.Text = Convert.ToString(value);
+            }, value);
         }
     }
 }

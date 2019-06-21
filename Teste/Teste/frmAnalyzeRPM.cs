@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraCharts;
+using System.Threading;
 
 namespace Teste
 {
@@ -27,6 +28,7 @@ namespace Teste
         }
 
         //Random _rnd;
+        SynchronizationContext sync = null;
 
         public frmAnalyzeRPM()
         {
@@ -35,6 +37,7 @@ namespace Teste
             chartControl1.BeginInit();
             chartControl1.EndInit();
 
+            sync = SynchronizationContext.Current;
             //timer1.Interval = 200;
             //timer1.Tick += new EventHandler(timer1_Tick);
             //
@@ -51,6 +54,10 @@ namespace Teste
         public void SetData(double value)
         {
             chartControl1.Series["RPM"].Points.AddPoint(DateTime.Now, value);
+            sync.Post(f =>
+            {
+                textEdit1.Text = Convert.ToString(value);
+            }, value);
         }
     }
 }
