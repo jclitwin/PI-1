@@ -148,7 +148,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(144, 25);
             this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Análise > Torque";
+            this.labelControl2.Text = "Gráfico > Torque";
             // 
             // frmAnalyzeTorquelayoutControl1ConvertedLayout
             // 

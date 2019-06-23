@@ -83,7 +83,7 @@
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(123, 25);
             this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "Análise > RPM";
+            this.labelControl2.Text = "Gráfico > RPM";
             // 
             // sidePanel1
             // 

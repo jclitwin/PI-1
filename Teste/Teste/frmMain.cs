@@ -180,5 +180,10 @@ namespace Teste
 
             frmAnalyzeTraction.Instance.BringToFront();
         }
+
+        private void accordionControlElement17_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAnalyze.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmAnalyze.Designer.cs">
+      <DependentUpon>frmAnalyze.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAnalyzeRPM.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAnalyze.resx">
+      <DependentUpon>frmAnalyze.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAnalyzeRPM.resx">
       <DependentUpon>frmAnalyzeRPM.cs</DependentUpon>
     </EmbeddedResource>
