@@ -42,8 +42,8 @@ namespace Teste
             try
             {
                 Log("Connecting...");
-                //serial = new SerialPort(frmSetup.Instance.Port, frmSetup.Instance.Serial);
-                serial = new SerialPort("COM8", 9600);
+                serial = new SerialPort(frmSetup.Instance.Port, frmSetup.Instance.Serial);
+                //serial = new SerialPort("COM8", 9600);
                 serial.DataReceived += new SerialDataReceivedEventHandler(portDataReceived);
                 serial.Parity = Parity.None;
                 serial.StopBits = StopBits.One;

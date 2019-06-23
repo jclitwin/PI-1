@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram2 = new DevExpress.XtraCharts.SwiftPlotDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
+            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -44,14 +45,14 @@
             this.sidePanel1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.frmAnalyzeTorquelayoutControl1ConvertedLayout)).BeginInit();
@@ -59,7 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sidePanel1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel1
@@ -84,30 +84,37 @@
             this.panelControl1.Size = new System.Drawing.Size(627, 385);
             this.panelControl1.TabIndex = 5;
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(480, 82);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(84, 20);
+            this.textEdit1.TabIndex = 12;
+            // 
             // chartControl1
             // 
-            swiftPlotDiagram2.AxisX.StickToEdge = true;
-            swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisX.VisualRange.Auto = false;
-            swiftPlotDiagram2.AxisX.VisualRange.MaxValueSerializable = "3";
-            swiftPlotDiagram2.AxisX.VisualRange.MinValueSerializable = "0";
-            swiftPlotDiagram2.AxisX.WholeRange.Auto = false;
-            swiftPlotDiagram2.AxisX.WholeRange.MaxValueSerializable = "3";
-            swiftPlotDiagram2.AxisX.WholeRange.MinValueSerializable = "0";
-            swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.DefaultPane.RuntimeCollapse = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram2.DependentAxesYRange = DevExpress.Utils.DefaultBoolean.False;
-            swiftPlotDiagram2.EnableAxisXScrolling = true;
-            swiftPlotDiagram2.EnableAxisXZooming = true;
-            this.chartControl1.Diagram = swiftPlotDiagram2;
+            swiftPlotDiagram1.AxisX.StickToEdge = true;
+            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisX.VisualRange.Auto = false;
+            swiftPlotDiagram1.AxisX.VisualRange.MaxValueSerializable = "3";
+            swiftPlotDiagram1.AxisX.VisualRange.MinValueSerializable = "0";
+            swiftPlotDiagram1.AxisX.WholeRange.Auto = false;
+            swiftPlotDiagram1.AxisX.WholeRange.MaxValueSerializable = "3";
+            swiftPlotDiagram1.AxisX.WholeRange.MinValueSerializable = "0";
+            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.DefaultPane.RuntimeCollapse = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram1.DependentAxesYRange = DevExpress.Utils.DefaultBoolean.False;
+            swiftPlotDiagram1.EnableAxisXScrolling = true;
+            swiftPlotDiagram1.EnableAxisXZooming = true;
+            this.chartControl1.Diagram = swiftPlotDiagram1;
             this.chartControl1.Legend.Name = "Default Legend";
             this.chartControl1.Location = new System.Drawing.Point(15, 26);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Orange";
-            series2.Name = "Torque";
-            series2.View = swiftPlotSeriesView2;
+            series1.Name = "Torque";
+            series1.View = swiftPlotSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
+        series1};
             this.chartControl1.Size = new System.Drawing.Size(560, 350);
             this.chartControl1.TabIndex = 1;
             this.chartControl1.ToolTipEnabled = DevExpress.Utils.DefaultBoolean.True;
@@ -186,13 +193,6 @@
             this.panelControl2item.TextSize = new System.Drawing.Size(0, 0);
             this.panelControl2item.TextVisible = false;
             // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(477, 82);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(88, 20);
-            this.textEdit1.TabIndex = 12;
-            // 
             // frmAnalyzeTorque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,9 +204,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -216,7 +217,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sidePanel1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
