@@ -48,7 +48,7 @@ namespace Teste
             //for (int i = 0; i < 8; i++)
 
             //Variaveis que serão lidas
-            double forçaTracao = frmConnection.Instance.Tracao;
+            double forcaTracao = frmConnection.Instance.Tracao;
             double forcaTorque = frmConnection.Instance.Torque;
             int rpm = frmConnection.Instance.RPM;
 
