@@ -28,7 +28,15 @@ namespace Teste
         }
 
         SynchronizationContext sync = null;
+
         List<AnalyzeData> _valuesLst = null;
+        public List<AnalyzeData> ValuesTorque
+        {
+            get
+            {
+                return _valuesLst;
+            }
+        }
 
         Stopwatch _stopwatch = null;
 

@@ -7,6 +7,7 @@ using OfficeOpenXml.Drawing.Chart;
 using OfficeOpenXml.Drawing;
 using System.Drawing;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Teste
 {
@@ -29,6 +30,8 @@ namespace Teste
         public frmAnalyze()
         {
             InitializeComponent();
+
+            //simpleButton3.Enabled = false;
         }
 
         private DataTable CreateData()
@@ -77,49 +80,66 @@ namespace Teste
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            //gridControl1.ExportToXls()
-            //saveFileDialog1.ShowDialog();
+            saveFileDialog1.Filter = "Microsoft Excel (*.xlsx)|*.xlsx";
+            saveFileDialog1.DefaultExt = "xlsx";
+            saveFileDialog1.AddExtension = true;
 
-            RunSample5();
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                List<AnalyzeData> rpm = frmAnalyzeRPM.Instance.ValuesRPM;
+                List<AnalyzeData> torque = frmAnalyzeTorque.Instance.ValuesTorque;
+                List<AnalyzeData> traction = frmAnalyzeTraction.Instance.ValuesTraction;
+
+                Save(saveFileDialog1.FileName, rpm, torque, traction);
+            }
         }
 
-        /// <summary>
-        /// Sample 5 - open Sample 1 and add 2 new rows and a Piechart
-        /// </summary>
-        public string RunSample5()
+        private string Save(string filePath, List<AnalyzeData> rpm, List<AnalyzeData> torque, List<AnalyzeData> traction)
         {
             //Set the output directory to the SampleApp folder where the app is running from. 
-            Utils.OutputDir = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}SampleApp");
+            //Utils.OutputDir = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}SampleApp");
 
-            FileInfo newFile = Utils.GetFileInfo("sample5.xlsx");
-            FileInfo templateFile = Utils.GetFileInfo("sample1.xlsx", false);
+            string path = Path.GetDirectoryName(filePath);
+            string fileName = Path.GetFileName(filePath);
 
-            Random rnd = new Random();
+            Utils.OutputDir = new DirectoryInfo(path);
+            FileInfo newFile = Utils.GetFileInfo(fileName, true);
 
             using (ExcelPackage package = new ExcelPackage(newFile))
             {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Inventory");
+                ////////////////////////////////////////////////////////////////////
+                /// RPM
+                ////////////////////////////////////////////////////////////////////
+                
+                ExcelWorksheet worksheetRPM = package.Workbook.Worksheets.Add("RPM");
 
-                worksheet.InsertRow(1, 1000);
+                worksheetRPM.InsertRow(1, rpm.Count + 1);
 
-                for (int i = 1; i < 1000; i++)
+                worksheetRPM.Cells["A1"].Value = "Índices";
+                worksheetRPM.Cells["B1"].Value = "Horários";
+                worksheetRPM.Cells["C1"].Value = "Valor";
+
+                for (int i = 0; i < rpm.Count; i++)
                 {
-                    worksheet.Cells[string.Format("A{0}", i)].Value = (i + 10000).ToString();
-                    worksheet.Cells[string.Format("B{0}", i)].Value = string.Format("Name #{0}", i);
-                    worksheet.Cells[string.Format("C{0}", i)].Value = i;
-                    worksheet.Cells[string.Format("D{0}", i)].Value = rnd.Next(0, 1000);
+                    int idx = i + 1 + 1;
+                    AnalyzeData data = rpm[i];
+                    if (data == null)
+                        continue;
+
+                    worksheetRPM.Cells[string.Format("A{0}", idx)].Value = idx - 1;
+                    worksheetRPM.Cells[string.Format("B{0}", idx)].Value = data.Now.ToString();
+                    worksheetRPM.Cells[string.Format("C{0}", idx)].Value = data.Value;
                 }
 
-                var chart = (worksheet.Drawings.AddChart("LineMarkers", eChartType.LineMarkers) as ExcelLineChart);
-                
-                chart.Title.Text = "Total";
+                var chart = (worksheetRPM.Drawings.AddChart("LineMarkers", eChartType.LineMarkers) as ExcelLineChart);
+
+                chart.Title.Text = "Gráfico RPM";
                 //From row 1 colum 5 with five pixels offset
                 chart.SetPosition(0, 0, 5, 5);
                 chart.SetSize(800, 600);
-                
-                ExcelAddress valueAddress = new ExcelAddress(1, 4, 1000, 4);
-                //var ser = (chart.Series.Add(valueAddress.Address, "B1:B999") as ExcelPieChartSerie);
-                var ser = (chart.Series.Add(valueAddress.Address, "B1:B999") as ExcelLineChartSerie);
+
+                ExcelAddress valueAddress = new ExcelAddress(2, 3, rpm.Count, 3);
+                var ser = (chart.Series.Add(valueAddress.Address, string.Format("B{0}:B{1}", 1, rpm.Count)) as ExcelLineChartSerie);
                 chart.DataLabel.ShowCategory = false;
                 chart.DataLabel.ShowPercent = true;
 
@@ -128,7 +148,95 @@ namespace Teste
                 chart.Legend.Border.Fill.Color = Color.DarkBlue;
 
                 //Switch the PageLayoutView back to normal
-                worksheet.View.PageLayoutView = false;
+                worksheetRPM.View.PageLayoutView = false;
+
+                ////////////////////////////////////////////////////////////////////
+                /// TORQUE
+                ////////////////////////////////////////////////////////////////////
+
+                ExcelWorksheet worksheetTorque = package.Workbook.Worksheets.Add("Torque");
+
+                worksheetTorque.InsertRow(1, torque.Count + 1);
+
+                worksheetTorque.Cells["A1"].Value = "Índices";
+                worksheetTorque.Cells["B1"].Value = "Horários";
+                worksheetTorque.Cells["C1"].Value = "Valor";
+
+                for (int i = 0; i < torque.Count; i++)
+                {
+                    int idx = i + 1 + 1;
+                    AnalyzeData data = torque[i];
+                    if (data == null)
+                        continue;
+
+                    worksheetTorque.Cells[string.Format("A{0}", idx)].Value = idx - 1;
+                    worksheetTorque.Cells[string.Format("B{0}", idx)].Value = data.Now.ToString();
+                    worksheetTorque.Cells[string.Format("C{0}", idx)].Value = data.Value;
+                }
+
+                var chartTorque = (worksheetTorque.Drawings.AddChart("LineMarkers", eChartType.LineMarkers) as ExcelLineChart);
+
+                chartTorque.Title.Text = "Gráfico Tração";
+                //From row 1 colum 5 with five pixels offset
+                chartTorque.SetPosition(0, 0, 5, 5);
+                chartTorque.SetSize(800, 600);
+
+                ExcelAddress valueAddressTorque = new ExcelAddress(2, 3, torque.Count, 3);
+                var serTorque = (chartTorque.Series.Add(valueAddressTorque.Address, string.Format("B{0}:B{1}", 1, torque.Count)) as ExcelLineChartSerie);
+                chartTorque.DataLabel.ShowCategory = false;
+                chartTorque.DataLabel.ShowPercent = true;
+
+                chartTorque.Legend.Border.LineStyle = eLineStyle.Solid;
+                chartTorque.Legend.Border.Fill.Style = eFillStyle.SolidFill;
+                chartTorque.Legend.Border.Fill.Color = Color.DarkBlue;
+
+                //Switch the PageLayoutView back to normal
+                worksheetTorque.View.PageLayoutView = false;
+
+                ////////////////////////////////////////////////////////////////////
+                /// Traction
+                ////////////////////////////////////////////////////////////////////
+
+                ExcelWorksheet worksheetTraction = package.Workbook.Worksheets.Add("Tração");
+
+                worksheetTraction.InsertRow(1, traction.Count + 1);
+
+                worksheetTraction.Cells["A1"].Value = "Índices";
+                worksheetTraction.Cells["B1"].Value = "Horários";
+                worksheetTraction.Cells["C1"].Value = "Valor";
+
+                for (int i = 0; i < traction.Count; i++)
+                {
+                    int idx = i + 1;
+                    AnalyzeData data = traction[i];
+                    if (data == null)
+                        continue;
+
+                    worksheetTraction.Cells[string.Format("A{0}", idx)].Value = idx - 1;
+                    worksheetTraction.Cells[string.Format("B{0}", idx)].Value = data.Now.ToString();
+                    worksheetTraction.Cells[string.Format("C{0}", idx)].Value = data.Value;
+                }
+
+                var chartTraction = (worksheetTraction.Drawings.AddChart("LineMarkers", eChartType.LineMarkers) as ExcelLineChart);
+
+                chartTraction.Title.Text = "Gráfico Torque";
+
+                //From row 1 colum 5 with five pixels offset
+                chartTraction.SetPosition(0, 0, 5, 5);
+                chartTraction.SetSize(800, 600);
+
+                ExcelAddress valueAddressTraction = new ExcelAddress(2, 3, torque.Count, 3);
+                var serTraction = (chartTraction.Series.Add(valueAddressTraction.Address, string.Format("B{0}:B{1}", 1, traction.Count)) as ExcelLineChartSerie);
+                chartTraction.DataLabel.ShowCategory = false;
+                chartTraction.DataLabel.ShowPercent = true;
+
+                chartTraction.Legend.Border.LineStyle = eLineStyle.Solid;
+                chartTraction.Legend.Border.Fill.Style = eFillStyle.SolidFill;
+                chartTraction.Legend.Border.Fill.Color = Color.DarkBlue;
+
+                //Switch the PageLayoutView back to normal
+                worksheetTraction.View.PageLayoutView = false;
+
                 // save our new workbook and we are done!
                 package.Save();
             }

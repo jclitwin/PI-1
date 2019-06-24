@@ -20,7 +20,15 @@ namespace Teste
         }
 
         SynchronizationContext _sync = null;
+
         List<AnalyzeData> _valuesLst = null;
+        public List<AnalyzeData> ValuesRPM
+        {
+            get
+            {
+                return _valuesLst;
+            }
+        }
 
         Stopwatch _stopwatch = null;
 
