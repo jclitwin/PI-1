@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange1 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange2 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
-            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange3 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange4 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange5 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
+            DevExpress.XtraGauges.Core.Model.ArcScaleRange arcScaleRange6 = new DevExpress.XtraGauges.Core.Model.ArcScaleRange();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -46,6 +46,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.frmRPMlayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.sidePanel1item = new DevExpress.XtraLayout.LayoutControlItem();
@@ -63,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.sidePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmRPMlayoutControl1ConvertedLayout)).BeginInit();
             this.frmRPMlayoutControl1ConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -144,30 +146,30 @@
             this.arcScaleComponent1.Name = "scale1";
             this.arcScaleComponent1.RadiusX = 75F;
             this.arcScaleComponent1.RadiusY = 75F;
-            arcScaleRange1.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
-            arcScaleRange1.EndThickness = 6F;
-            arcScaleRange1.EndValue = 3000F;
-            arcScaleRange1.Name = "Range0";
-            arcScaleRange1.ShapeOffset = 29F;
-            arcScaleRange1.StartThickness = 6F;
-            arcScaleRange2.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
-            arcScaleRange2.EndThickness = 6F;
-            arcScaleRange2.EndValue = 8000F;
-            arcScaleRange2.Name = "Range1";
-            arcScaleRange2.ShapeOffset = 29F;
-            arcScaleRange2.StartThickness = 6F;
-            arcScaleRange2.StartValue = 3000F;
-            arcScaleRange3.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
-            arcScaleRange3.EndThickness = 6F;
-            arcScaleRange3.EndValue = 11000F;
-            arcScaleRange3.Name = "Range2";
-            arcScaleRange3.ShapeOffset = 29F;
-            arcScaleRange3.StartThickness = 6F;
-            arcScaleRange3.StartValue = 8000F;
+            arcScaleRange4.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
+            arcScaleRange4.EndThickness = 6F;
+            arcScaleRange4.EndValue = 3000F;
+            arcScaleRange4.Name = "Range0";
+            arcScaleRange4.ShapeOffset = 29F;
+            arcScaleRange4.StartThickness = 6F;
+            arcScaleRange5.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
+            arcScaleRange5.EndThickness = 6F;
+            arcScaleRange5.EndValue = 8000F;
+            arcScaleRange5.Name = "Range1";
+            arcScaleRange5.ShapeOffset = 29F;
+            arcScaleRange5.StartThickness = 6F;
+            arcScaleRange5.StartValue = 3000F;
+            arcScaleRange6.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
+            arcScaleRange6.EndThickness = 6F;
+            arcScaleRange6.EndValue = 11000F;
+            arcScaleRange6.Name = "Range2";
+            arcScaleRange6.ShapeOffset = 29F;
+            arcScaleRange6.StartThickness = 6F;
+            arcScaleRange6.StartValue = 8000F;
             this.arcScaleComponent1.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
-            arcScaleRange1,
-            arcScaleRange2,
-            arcScaleRange3});
+            arcScaleRange4,
+            arcScaleRange5,
+            arcScaleRange6});
             this.arcScaleComponent1.Shader = new DevExpress.XtraGauges.Core.Drawing.OpacityShader("");
             this.arcScaleComponent1.StartAngle = -225F;
             // 
@@ -190,7 +192,7 @@
             this.trackBarControl1.Properties.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBarControl1.Properties.ShowLabels = true;
             this.trackBarControl1.Properties.ShowValueToolTip = true;
-            this.trackBarControl1.Size = new System.Drawing.Size(45, 409);
+            this.trackBarControl1.Size = new System.Drawing.Size(45, 405);
             this.trackBarControl1.TabIndex = 1;
             this.trackBarControl1.EditValueChanged += new System.EventHandler(this.trackBarControl1_EditValueChanged);
             // 
@@ -200,9 +202,9 @@
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panelControl1.Controls.Add(this.trackBarControl1);
-            this.panelControl1.Location = new System.Drawing.Point(517, 0);
+            this.panelControl1.Location = new System.Drawing.Point(517, 14);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(101, 425);
+            this.panelControl1.Size = new System.Drawing.Size(101, 411);
             this.panelControl1.TabIndex = 2;
             // 
             // panelControl2
@@ -234,6 +236,7 @@
             // 
             // sidePanel1
             // 
+            this.sidePanel1.Controls.Add(this.textEdit2);
             this.sidePanel1.Controls.Add(this.gaugeControl1);
             this.sidePanel1.Controls.Add(this.panelControl1);
             this.sidePanel1.Location = new System.Drawing.Point(12, 54);
@@ -241,6 +244,13 @@
             this.sidePanel1.Size = new System.Drawing.Size(634, 437);
             this.sidePanel1.TabIndex = 4;
             this.sidePanel1.Text = "sidePanel1";
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(517, -3);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(101, 20);
+            this.textEdit2.TabIndex = 3;
             // 
             // frmRPMlayoutControl1ConvertedLayout
             // 
@@ -308,6 +318,7 @@
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
             this.sidePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmRPMlayoutControl1ConvertedLayout)).EndInit();
             this.frmRPMlayoutControl1ConvertedLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -337,5 +348,6 @@
         private DevExpress.XtraLayout.LayoutControlItem sidePanel1item;
         private DevExpress.XtraLayout.LayoutControlItem panelControl2item;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
     }
 }
