@@ -3,11 +3,13 @@ using DevExpress.XtraGauges.Win;
 using DevExpress.XtraGauges.Win.Base;
 using DevExpress.XtraGauges.Core.Model;
 using DevExpress.XtraGauges.Base;
+using System.Threading;
 
 namespace Teste
 {
     public partial class frmRPM : DevExpress.XtraEditors.XtraUserControl
     {
+        SynchronizationContext sync = null;
         private static frmRPM _instance;
         public static frmRPM Instance
         {
@@ -23,6 +25,8 @@ namespace Teste
         public frmRPM()
         {
             InitializeComponent();
+
+            sync = SynchronizationContext.Current;
 
             timer1.Interval = 166;
             timer1.Tick += new EventHandler(timer1_Tick);
@@ -70,8 +74,8 @@ namespace Teste
                 {
                     foreach (IScale scale in cGauge.Scales)
                     {
-                        scale.Value = AnimateScaleValue(scale);
-                        textEdit1.Text = scale.Value.ToString();
+                        scale.Value = frmConnection.Instance.RPM;
+                        textEdit1.Text = frmConnection.Instance.RPM.ToString();
                     }
                 }
             }
@@ -93,8 +97,12 @@ namespace Teste
 
         private void trackBarControl1_EditValueChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(trackBarControl1.Value);
-            if(frmConnection.Instance.connected)
+            sync.Post(f =>
+            {
+                textEdit2.Text = trackBarControl1.Value.ToString();
+            }, trackBarControl1.Value);
+
+            if (frmConnection.Instance.connected)
                 frmConnection.Instance.SendRPM(trackBarControl1.Value);
         }
 
