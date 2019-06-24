@@ -61,7 +61,7 @@ namespace Teste
 
             double rps = rpm / 60;
             double densidade = 1.225;
-            double tracao = forçaTracao + fd;
+            double tracao = forcaTracao + fd;
             double torqueResultante = forcaTorque * comprimentoHaste;
             double potencia = 2 * Math.PI * rps * torqueResultante;
             double ap = (Math.PI * Math.Pow(diametro, 2)) / 4;
