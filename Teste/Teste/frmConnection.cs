@@ -22,9 +22,27 @@ namespace Teste
         SerialPort serial;
         SynchronizationContext sync = null;
 
-        double torque = 0.0;
-        double tracao = 0.0;
-        int rpm = 0;
+        private double _torque = 0.0;
+        public double Torque
+        {
+            get { return _torque; }
+            set { _torque = value; }
+        }
+
+        private double _tracao = 0.0;
+        public double Tracao
+        {
+            get { return _tracao; }
+            set { _tracao = value; }
+        }
+
+        private int _rpm = 0;
+        public int RPM
+        {
+            get { return _rpm; }
+            set { _rpm = value; }
+        }
+
         string msg;
 
         public bool connected = false;
@@ -110,28 +128,28 @@ namespace Teste
                 msg = msg.Substring(1);
                 string[] datas = msg.Split(';');
 
-                torque = Convert.ToDouble(datas[0]);
-                tracao = Convert.ToDouble(datas[1]);
-                rpm = Convert.ToInt32(datas[2]);
+                _torque = Convert.ToDouble(datas[0]);
+                _tracao = Convert.ToDouble(datas[1]);
+                _rpm = Convert.ToInt32(datas[2]);
 
                 sync.Post(f =>
                 {
-                    Log("Torque: " + Convert.ToString(torque));
-                    frmAnalyzeTorque.Instance.SetData(torque);
-                }, torque);
+                    Log("Torque: " + Convert.ToString(_torque));
+                    frmAnalyzeTorque.Instance.SetData(_torque);
+                }, _torque);
 
 
                 sync.Post(f =>
                 {
-                    Log("Tração: " + Convert.ToString(tracao));
-                    frmAnalyzeTraction.Instance.SetData(tracao);
-                }, tracao);
+                    Log("Tração: " + Convert.ToString(_tracao));
+                    frmAnalyzeTraction.Instance.SetData(_tracao);
+                }, _tracao);
 
                 sync.Post(f =>
                 {
-                    Log("RPM: " + Convert.ToString(rpm));
-                    frmAnalyzeRPM.Instance.SetData(rpm);
-                }, rpm);
+                    Log("RPM: " + Convert.ToString(_rpm));
+                    frmAnalyzeRPM.Instance.SetData(_rpm);
+                }, _rpm);
             }
 
         }
