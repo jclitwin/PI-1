@@ -183,7 +183,14 @@ namespace Teste
 
         private void accordionControlElement17_Click(object sender, EventArgs e)
         {
+            if (!fluentDesignFormContainer1.Controls.Contains(frmAnalyze.Instance))
+            {
+                fluentDesignFormContainer1.Controls.Add(frmAnalyze.Instance);
+                frmAnalyze.Instance.Dock = DockStyle.Fill;
+                frmAnalyze.Instance.BringToFront();
+            }
 
+            frmAnalyze.Instance.BringToFront();
         }
     }
 }

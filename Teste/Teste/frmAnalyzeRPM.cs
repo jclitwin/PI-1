@@ -27,7 +27,6 @@ namespace Teste
             }
         }
 
-        //Random _rnd;
         SynchronizationContext sync = null;
 
         public frmAnalyzeRPM()
@@ -38,25 +37,16 @@ namespace Teste
             chartControl1.EndInit();
 
             sync = SynchronizationContext.Current;
-            //timer1.Interval = 200;
-            //timer1.Tick += new EventHandler(timer1_Tick);
-            //
-            //timer1.Start();
-            //
-            //_rnd = new Random();
-        }
 
-        //void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    SetData(_rnd.Next(100, 500) + _rnd.NextDouble());
-        //}
+            textEdit1.Text = "Aguardando recebimento de dados...";
+        }
 
         public void SetData(double value)
         {
             chartControl1.Series["RPM"].Points.AddPoint(DateTime.Now, value);
             sync.Post(f =>
             {
-                textEdit1.Text = Convert.ToString(value);
+                textEdit1.Text = "Atual RPM: " + Convert.ToString(value);
             }, value);
         }
     }

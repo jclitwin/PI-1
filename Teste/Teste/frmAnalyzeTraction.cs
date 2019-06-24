@@ -26,36 +26,32 @@ namespace Teste
             }
         }
 
-        //Random _rnd;
         SynchronizationContext sync = null;
 
         public frmAnalyzeTraction()
         {
             InitializeComponent();
+
             sync = SynchronizationContext.Current;
+
             chartControl1.BeginInit();
             chartControl1.EndInit();
 
-            //timer1.Interval = 200;
-            //timer1.Tick += new EventHandler(timer1_Tick);
-            //
-            //timer1.Start();
-            //
-            //_rnd = new Random();
+            textEdit1.Text = "Aguardando recebimento de dados...";
         }
-
-        //void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    SetData(_rnd.Next(100, 500) + _rnd.NextDouble());
-        //}
 
         public void SetData(double value)
         {
             chartControl1.Series["Traction"].Points.AddPoint(DateTime.Now, value);
             sync.Post(f =>
             {
-                textEdit1.Text = Convert.ToString(value);
+                textEdit1.Text = "Atual Tração: " + Convert.ToString(value);
             }, value);
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
