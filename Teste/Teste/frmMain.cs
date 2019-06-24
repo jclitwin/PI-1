@@ -13,6 +13,18 @@ namespace Teste
     {
         private readonly string CONFIG_FILE_NAME = "./config.ini";
 
+        private static frmMain _instance;
+        public static frmMain Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new frmMain();
+
+                return _instance;
+            }
+        }
+
         public frmMain()
         {
             LoadConfig();
@@ -44,8 +56,16 @@ namespace Teste
                 string port = data["Connection"]["Port"].Replace("\"", "");
                 int serial = Convert.ToInt32(data["Connection"]["Serial"]);
 
+                double helixDiameter = Convert.ToDouble(data["Connection"]["HelixDiameter"]);
+                double dragForce = Convert.ToDouble(data["Connection"]["DragForce"]);
+                double windSpeed = Convert.ToDouble(data["Connection"]["WindSpeed"]);
+
                 frmSetup.Instance.Port = port;
                 frmSetup.Instance.Serial = serial;
+
+                frmSetup.Instance.HelixDiameter = helixDiameter;
+                frmSetup.Instance.DragForce = dragForce;
+                frmSetup.Instance.WindSpeed = windSpeed;
 
                 frmSetup.Instance.LoadSerialPort();
                 frmSetup.Instance.GetPort();
@@ -60,7 +80,7 @@ namespace Teste
             return true;
         }
 
-        private void accordionControlElement2_Click(object sender, EventArgs e)
+        public void GoHomePage()
         {
             if (!fluentDesignFormContainer1.Controls.Contains(frmHome.Instance))
             {
@@ -70,6 +90,11 @@ namespace Teste
             }
 
             frmHome.Instance.BringToFront();
+        }
+
+        private void accordionControlElement2_Click(object sender, EventArgs e)
+        {
+            GoHomePage();
         }
 
         private void accordionControlElement5_Click(object sender, EventArgs e)

@@ -41,6 +41,27 @@ namespace Teste
             set { _serial = value; }
         }
 
+        private double _helixDiameter = 0;
+        public double HelixDiameter
+        {
+            get { return _helixDiameter; }
+            set { _helixDiameter = value; }
+        }
+
+        private double _dragForce = 0;
+        public double DragForce
+        {
+            get { return _dragForce; }
+            set { _dragForce = value; }
+        }
+
+        private double _windSpeed = 0;
+        public double WindSpeed
+        {
+            get { return _windSpeed; }
+            set { _windSpeed = value; }
+        }
+
         public frmSetup()
         {
             InitializeComponent();
@@ -125,6 +146,11 @@ namespace Teste
         private void simpleButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            frmMain.Instance.GoHomePage();
         }
     }
 }
