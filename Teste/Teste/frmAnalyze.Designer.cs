@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAnalyze));
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -78,7 +79,7 @@
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Location = new System.Drawing.Point(12, 47);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(633, 360);
+            this.panelControl1.Size = new System.Drawing.Size(633, 346);
             this.panelControl1.TabIndex = 0;
             // 
             // gridControl1
@@ -87,7 +88,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(633, 360);
+            this.gridControl1.Size = new System.Drawing.Size(633, 346);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -203,21 +204,23 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 411);
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(12, 397);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(304, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(304, 36);
             this.simpleButton1.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Text = "Iniciar Teste";
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(320, 411);
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(320, 397);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(325, 22);
+            this.simpleButton3.Size = new System.Drawing.Size(325, 36);
             this.simpleButton3.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "simpleButton3";
+            this.simpleButton3.Text = "Salvar Dados";
             // 
             // frmAnalyzelayoutControl1ConvertedLayout
             // 
@@ -257,18 +260,18 @@
             // simpleButton3item
             // 
             this.simpleButton3item.Control = this.simpleButton3;
-            this.simpleButton3item.Location = new System.Drawing.Point(308, 399);
+            this.simpleButton3item.Location = new System.Drawing.Point(308, 385);
             this.simpleButton3item.Name = "simpleButton3item";
-            this.simpleButton3item.Size = new System.Drawing.Size(329, 26);
+            this.simpleButton3item.Size = new System.Drawing.Size(329, 40);
             this.simpleButton3item.TextSize = new System.Drawing.Size(0, 0);
             this.simpleButton3item.TextVisible = false;
             // 
             // simpleButton1item
             // 
             this.simpleButton1item.Control = this.simpleButton1;
-            this.simpleButton1item.Location = new System.Drawing.Point(0, 399);
+            this.simpleButton1item.Location = new System.Drawing.Point(0, 385);
             this.simpleButton1item.Name = "simpleButton1item";
-            this.simpleButton1item.Size = new System.Drawing.Size(308, 26);
+            this.simpleButton1item.Size = new System.Drawing.Size(308, 40);
             this.simpleButton1item.TextSize = new System.Drawing.Size(0, 0);
             this.simpleButton1item.TextVisible = false;
             // 
@@ -280,7 +283,7 @@
             this.panelControl1item});
             this.groupControl2item.Location = new System.Drawing.Point(0, 0);
             this.groupControl2item.Name = "groupControl2item";
-            this.groupControl2item.Size = new System.Drawing.Size(637, 399);
+            this.groupControl2item.Size = new System.Drawing.Size(637, 385);
             this.groupControl2item.Text = "layoutControlGroup1";
             // 
             // panelControl2item
@@ -300,7 +303,7 @@
             this.panelControl1item.Control = this.panelControl1;
             this.panelControl1item.Location = new System.Drawing.Point(0, 35);
             this.panelControl1item.Name = "panelControl1item";
-            this.panelControl1item.Size = new System.Drawing.Size(637, 364);
+            this.panelControl1item.Size = new System.Drawing.Size(637, 350);
             this.panelControl1item.TextSize = new System.Drawing.Size(0, 0);
             this.panelControl1item.TextVisible = false;
             // 
