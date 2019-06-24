@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalyzeData.cs" />
     <Compile Include="frmAnalyze.cs">
       <SubType>UserControl</SubType>
     </Compile>

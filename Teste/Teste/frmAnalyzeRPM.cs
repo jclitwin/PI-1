@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 
 namespace Teste
@@ -17,7 +19,10 @@ namespace Teste
             }
         }
 
-        SynchronizationContext sync = null;
+        SynchronizationContext _sync = null;
+        List<AnalyzeData> _valuesLst = null;
+
+        Stopwatch _stopwatch = null;
 
         public frmAnalyzeRPM()
         {
@@ -26,7 +31,9 @@ namespace Teste
             chartControl1.BeginInit();
             chartControl1.EndInit();
 
-            sync = SynchronizationContext.Current;
+            _sync = SynchronizationContext.Current;
+
+            _valuesLst = new List<AnalyzeData>();
 
             textEdit1.Text = "Aguardando recebimento de dados...";
 
@@ -37,16 +44,42 @@ namespace Teste
             timer1.Start();
         }
 
+        public void StartTest()
+        {
+            if (_stopwatch == null)
+                _stopwatch = new Stopwatch();
+
+            _stopwatch.Start();
+        }
+
+        public void StopTest()
+        {
+            _stopwatch.Stop();
+        }
+
         private Random _rnd = null;
         private void timer_Tick(object sender, EventArgs e)
         {
+            if (_stopwatch == null)
+                StartTest();
+
             SetData(_rnd.Next(100, 500) + _rnd.NextDouble());
         }
 
         public void SetData(double value)
         {
-            chartControl1.Series["RPM"].Points.AddPoint(DateTime.Now, value);
-            sync.Post(f =>
+            DateTime now = DateTime.Now;
+            long ticks = _stopwatch.ElapsedTicks;
+
+            AnalyzeData data = new AnalyzeData();
+            data.Now = now;
+            data.Value = value;
+            data.Ticks = ticks;
+
+            _valuesLst.Add(data);
+
+            chartControl1.Series["RPM"].Points.AddPoint(now, value);
+            _sync.Post(f =>
             {
                 textEdit1.Text = "Atual RPM: " + Convert.ToString(value);
             }, value);

@@ -32,6 +32,7 @@ namespace Teste
         private DataTable CreateData()
         {
             DataTable dt = new DataTable();
+
             dt.Columns.Add("Property0", typeof(string));
             dt.Columns.Add("Property1", typeof(string));
             dt.Columns.Add("Property2", typeof(string));
@@ -40,8 +41,11 @@ namespace Teste
             dt.Columns.Add("Property5", typeof(string));
             dt.Columns.Add("Property6", typeof(string));
             dt.Columns.Add("Property7", typeof(string));
-            for (int i = 0; i < 7; i++)
-                dt.Rows.Add(i.ToString(), "Name" + i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString());
+            dt.Columns.Add("Property8", typeof(string));
+
+            for (int i = 0; i < 8; i++)
+                dt.Rows.Add(i.ToString(), "Name" + i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString(), i.ToString());
+
             return dt;
         }
 
@@ -62,26 +66,11 @@ namespace Teste
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5], obj[5].ToString());
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], obj[6].ToString());
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[7], obj[7].ToString());
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[8], obj[8].ToString());
                     gridView1.UpdateCurrentRow();
                 }
 
             }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Property0", typeof(string));
-            dt.Columns.Add("Property1", typeof(string));
-            dt.Columns.Add("Property2", typeof(string));
-            dt.Columns.Add("Property3", typeof(string));
-            dt.Columns.Add("Property4", typeof(string));
-            dt.Columns.Add("Property5", typeof(string));
-            dt.Columns.Add("Property6", typeof(string));
-            dt.Columns.Add("Property7", typeof(string));
-
-            gridControl1.DataSource = dt;
-            ShowGrid(CreateData());
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -127,10 +116,11 @@ namespace Teste
                 chart.SetSize(800, 600);
                 
                 ExcelAddress valueAddress = new ExcelAddress(1, 4, 1000, 4);
-                var ser = (chart.Series.Add(valueAddress.Address, "B1:B999") as ExcelPieChartSerie);
+                //var ser = (chart.Series.Add(valueAddress.Address, "B1:B999") as ExcelPieChartSerie);
+                var ser = (chart.Series.Add(valueAddress.Address, "B1:B999") as ExcelLineChartSerie);
                 chart.DataLabel.ShowCategory = false;
                 chart.DataLabel.ShowPercent = true;
-                
+
                 chart.Legend.Border.LineStyle = eLineStyle.Solid;
                 chart.Legend.Border.Fill.Style = eFillStyle.SolidFill;
                 chart.Legend.Border.Fill.Color = Color.DarkBlue;
@@ -142,6 +132,23 @@ namespace Teste
             }
 
             return newFile.FullName;
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Property0", typeof(string));
+            dt.Columns.Add("Property1", typeof(string));
+            dt.Columns.Add("Property2", typeof(string));
+            dt.Columns.Add("Property3", typeof(string));
+            dt.Columns.Add("Property4", typeof(string));
+            dt.Columns.Add("Property5", typeof(string));
+            dt.Columns.Add("Property6", typeof(string));
+            dt.Columns.Add("Property7", typeof(string));
+            dt.Columns.Add("Property8", typeof(string));
+
+            gridControl1.DataSource = dt;
+            ShowGrid(CreateData());
         }
     }
 }

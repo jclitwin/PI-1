@@ -42,6 +42,7 @@
             this.colProperty5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProperty6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProperty7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProperty8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -104,7 +105,8 @@
             this.colProperty4,
             this.colProperty5,
             this.colProperty6,
-            this.colProperty7});
+            this.colProperty7,
+            this.colProperty8});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -119,7 +121,7 @@
             // 
             // colProperty1
             // 
-            this.colProperty1.Caption = "V\'";
+            this.colProperty1.Caption = "Tipo";
             this.colProperty1.FieldName = "Property1";
             this.colProperty1.Name = "colProperty1";
             this.colProperty1.Visible = true;
@@ -128,7 +130,7 @@
             // 
             // colProperty2
             // 
-            this.colProperty2.Caption = "J";
+            this.colProperty2.Caption = "V\'";
             this.colProperty2.FieldName = "Property2";
             this.colProperty2.Name = "colProperty2";
             this.colProperty2.Visible = true;
@@ -137,7 +139,7 @@
             // 
             // colProperty3
             // 
-            this.colProperty3.Caption = "Np";
+            this.colProperty3.Caption = "J";
             this.colProperty3.FieldName = "Property3";
             this.colProperty3.Name = "colProperty3";
             this.colProperty3.Visible = true;
@@ -146,7 +148,7 @@
             // 
             // colProperty4
             // 
-            this.colProperty4.Caption = "Ct";
+            this.colProperty4.Caption = "Np";
             this.colProperty4.FieldName = "Property4";
             this.colProperty4.Name = "colProperty4";
             this.colProperty4.Visible = true;
@@ -155,7 +157,7 @@
             // 
             // colProperty5
             // 
-            this.colProperty5.Caption = "Cp";
+            this.colProperty5.Caption = "Ct";
             this.colProperty5.FieldName = "Property5";
             this.colProperty5.Name = "colProperty5";
             this.colProperty5.Visible = true;
@@ -164,7 +166,7 @@
             // 
             // colProperty6
             // 
-            this.colProperty6.Caption = "Torque (Q)";
+            this.colProperty6.Caption = "Cp";
             this.colProperty6.FieldName = "Property6";
             this.colProperty6.Name = "colProperty6";
             this.colProperty6.Visible = true;
@@ -173,12 +175,21 @@
             // 
             // colProperty7
             // 
-            this.colProperty7.Caption = "Tração (T)";
+            this.colProperty7.Caption = "Torque (Q)";
             this.colProperty7.FieldName = "Property7";
             this.colProperty7.Name = "colProperty7";
             this.colProperty7.Visible = true;
-            this.colProperty7.VisibleIndex = 7;
-            this.colProperty7.Width = 54;
+            this.colProperty7.VisibleIndex = 6;
+            this.colProperty7.Width = 42;
+            // 
+            // colProperty8
+            // 
+            this.colProperty8.Caption = "Tração (T)";
+            this.colProperty8.FieldName = "Property8";
+            this.colProperty8.Name = "colProperty8";
+            this.colProperty8.Visible = true;
+            this.colProperty8.VisibleIndex = 7;
+            this.colProperty8.Width = 54;
             // 
             // panelControl2
             // 
@@ -212,6 +223,7 @@
             this.simpleButton1.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Iniciar Teste";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // simpleButton3
             // 
@@ -350,6 +362,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colProperty5;
         private DevExpress.XtraGrid.Columns.GridColumn colProperty6;
         private DevExpress.XtraGrid.Columns.GridColumn colProperty7;
+        private DevExpress.XtraGrid.Columns.GridColumn colProperty8;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
