@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Text;
+using System.IO;
+using OfficeOpenXml;
+using OfficeOpenXml.Drawing.Chart;
+using OfficeOpenXml.Drawing;
 using System.Drawing;
 using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace Teste
 {
@@ -83,6 +82,66 @@ namespace Teste
 
             gridControl1.DataSource = dt;
             ShowGrid(CreateData());
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            //gridControl1.ExportToXls()
+            //saveFileDialog1.ShowDialog();
+
+            RunSample5();
+        }
+
+        /// <summary>
+        /// Sample 5 - open Sample 1 and add 2 new rows and a Piechart
+        /// </summary>
+        public string RunSample5()
+        {
+            //Set the output directory to the SampleApp folder where the app is running from. 
+            Utils.OutputDir = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}SampleApp");
+
+            FileInfo newFile = Utils.GetFileInfo("sample5.xlsx");
+            FileInfo templateFile = Utils.GetFileInfo("sample1.xlsx", false);
+
+            Random rnd = new Random();
+
+            using (ExcelPackage package = new ExcelPackage(newFile))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Inventory");
+
+                worksheet.InsertRow(1, 1000);
+
+                for (int i = 1; i < 1000; i++)
+                {
+                    worksheet.Cells[string.Format("A{0}", i)].Value = (i + 10000).ToString();
+                    worksheet.Cells[string.Format("B{0}", i)].Value = string.Format("Name #{0}", i);
+                    worksheet.Cells[string.Format("C{0}", i)].Value = i;
+                    worksheet.Cells[string.Format("D{0}", i)].Value = rnd.Next(0, 1000);
+                }
+
+                var chart = (worksheet.Drawings.AddChart("LineMarkers", eChartType.LineMarkers) as ExcelLineChart);
+                
+                chart.Title.Text = "Total";
+                //From row 1 colum 5 with five pixels offset
+                chart.SetPosition(0, 0, 5, 5);
+                chart.SetSize(800, 600);
+                
+                ExcelAddress valueAddress = new ExcelAddress(1, 4, 1000, 4);
+                var ser = (chart.Series.Add(valueAddress.Address, "B1:B999") as ExcelPieChartSerie);
+                chart.DataLabel.ShowCategory = false;
+                chart.DataLabel.ShowPercent = true;
+                
+                chart.Legend.Border.LineStyle = eLineStyle.Solid;
+                chart.Legend.Border.Fill.Style = eFillStyle.SolidFill;
+                chart.Legend.Border.Fill.Color = Color.DarkBlue;
+
+                //Switch the PageLayoutView back to normal
+                worksheet.View.PageLayoutView = false;
+                // save our new workbook and we are done!
+                package.Save();
+            }
+
+            return newFile.FullName;
         }
     }
 }

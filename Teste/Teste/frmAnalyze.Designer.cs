@@ -54,6 +54,7 @@
             this.groupControl2item = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -221,6 +222,7 @@
             this.simpleButton3.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Salvar Dados";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmAnalyzelayoutControl1ConvertedLayout
             // 
@@ -360,5 +362,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup groupControl2item;
         private DevExpress.XtraLayout.LayoutControlItem panelControl2item;
         private DevExpress.XtraLayout.LayoutControlItem panelControl1item;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

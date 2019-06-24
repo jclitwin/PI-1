@@ -137,7 +137,7 @@
             this.arcScaleComponent1.MajorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style22_1;
             this.arcScaleComponent1.MajorTickmark.TextOffset = 13F;
             this.arcScaleComponent1.MajorTickmark.TextOrientation = DevExpress.XtraGauges.Core.Model.LabelOrientation.LeftToRight;
-            this.arcScaleComponent1.MaxValue = 100F;
+            this.arcScaleComponent1.MaxValue = 11000F;
             this.arcScaleComponent1.MinorTickCount = 4;
             this.arcScaleComponent1.MinorTickmark.ShapeOffset = -8F;
             this.arcScaleComponent1.MinorTickmark.ShapeType = DevExpress.XtraGauges.Core.Model.TickmarkShapeType.Circular_Style22_2;
@@ -146,24 +146,24 @@
             this.arcScaleComponent1.RadiusY = 75F;
             arcScaleRange1.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#95C573");
             arcScaleRange1.EndThickness = 6F;
-            arcScaleRange1.EndValue = 33F;
+            arcScaleRange1.EndValue = 3000F;
             arcScaleRange1.Name = "Range0";
             arcScaleRange1.ShapeOffset = 29F;
             arcScaleRange1.StartThickness = 6F;
             arcScaleRange2.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#F4C570");
             arcScaleRange2.EndThickness = 6F;
-            arcScaleRange2.EndValue = 66F;
+            arcScaleRange2.EndValue = 8000F;
             arcScaleRange2.Name = "Range1";
             arcScaleRange2.ShapeOffset = 29F;
             arcScaleRange2.StartThickness = 6F;
-            arcScaleRange2.StartValue = 33F;
+            arcScaleRange2.StartValue = 3000F;
             arcScaleRange3.AppearanceRange.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#DC615D");
             arcScaleRange3.EndThickness = 6F;
-            arcScaleRange3.EndValue = 100F;
+            arcScaleRange3.EndValue = 11000F;
             arcScaleRange3.Name = "Range2";
             arcScaleRange3.ShapeOffset = 29F;
             arcScaleRange3.StartThickness = 6F;
-            arcScaleRange3.StartValue = 66F;
+            arcScaleRange3.StartValue = 8000F;
             this.arcScaleComponent1.Ranges.AddRange(new DevExpress.XtraGauges.Core.Model.IRange[] {
             arcScaleRange1,
             arcScaleRange2,
