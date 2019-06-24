@@ -145,12 +145,29 @@ namespace Teste
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            string strCom = comboBoxEdit2.SelectedItem as string;
 
+            int indexOfCOM = strCom.IndexOf(" - ");
+            int count = strCom.Length - indexOfCOM;
+            string com = strCom.Remove(indexOfCOM, count);
+
+            Port = com;
+            Serial = Convert.ToInt32(comboBoxEdit1.SelectedItem);
+            HelixDiameter = Convert.ToDouble(textEdit1.Text);
+            DragForce = Convert.ToDouble(textEdit2.Text);
+            WindSpeed = Convert.ToDouble(textEdit3.Text);
+
+            frmMain.Instance.WriteConfig(Port, Serial, HelixDiameter, DragForce, WindSpeed);
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             frmMain.Instance.GoHomePage();
+        }
+
+        private void tabPane1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

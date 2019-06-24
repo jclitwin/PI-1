@@ -115,6 +115,7 @@
             this.tabPane1.Size = new System.Drawing.Size(646, 359);
             this.tabPane1.TabIndex = 5;
             this.tabPane1.Text = "Conexão";
+            this.tabPane1.Click += new System.EventHandler(this.tabPane1_Click);
             // 
             // tabNavigationPage1
             // 

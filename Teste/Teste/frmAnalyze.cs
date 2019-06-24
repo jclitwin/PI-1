@@ -24,6 +24,8 @@ namespace Teste
             }
         }
 
+        private bool _initTest = false;
+
         public frmAnalyze()
         {
             InitializeComponent();

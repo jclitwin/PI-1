@@ -39,6 +39,27 @@ namespace Teste
             }
         }
 
+        public bool WriteConfig(string port, int serial, double helixDiameter, double dragForce, double windSpeed)
+        {
+            var parser = new FileIniDataParser();
+            if (File.Exists(CONFIG_FILE_NAME))
+            {
+                File.Delete(CONFIG_FILE_NAME);
+            }
+
+            IniData data = new IniData();
+            data["Connection"]["Port"] = port;
+            data["Connection"]["Serial"] = serial.ToString();
+            data["Connection"]["HelixDiameter"] = helixDiameter.ToString();
+            data["Connection"]["DragForce"] = dragForce.ToString();
+            data["Connection"]["WindSpeed"] = windSpeed.ToString();
+
+            //Save the file
+            parser.WriteFile(CONFIG_FILE_NAME, data);
+
+            return true;
+        }
+
         private bool LoadConfig()
         {
             var parser = new FileIniDataParser();

@@ -40,7 +40,7 @@ namespace Teste
             timer1.Interval = 200;
             timer1.Tick += new EventHandler(timer_Tick);
             _rnd = new Random();
-
+            
             timer1.Start();
         }
 
