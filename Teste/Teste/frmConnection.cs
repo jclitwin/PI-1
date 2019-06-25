@@ -76,14 +76,17 @@ namespace Teste
             {
                 if (_logs.Count > 0)
                 {
-                    int processLogs = 10;
+                    //int processLogs = 10;
 
-                    for (int i = 0; i < processLogs; i++)
+                    for (int i = 0; i < _logs.Count; i++)
                     {
+                        if (_logs.Count <= 0)
+                            break;
+
                         string msg = _logs.Dequeue();
                         if (!string.IsNullOrEmpty(msg))
                         {
-                            memoEdit2.Text += msg;
+                            memoEdit2.Text += msg + "\r\n";
                             memoEdit2.SelectionStart = memoEdit2.Text.Length;
                             memoEdit2.ScrollToCaret();
                         }
