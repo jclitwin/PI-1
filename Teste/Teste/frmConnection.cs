@@ -63,30 +63,32 @@ namespace Teste
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                //Log("Connecting receiver port...");
-                //_receivePort = new SerialPort(frmSetup.Instance.ReceiverPort, frmSetup.Instance.ReceiverSerial);
-                //_receivePort.DataReceived += new SerialDataReceivedEventHandler(portDataReceiverReceived);
-                //_receivePort.Parity = Parity.None;
-                //_receivePort.StopBits = StopBits.One;
-                //_receivePort.DataBits = 8;
-                //_receivePort.Handshake = Handshake.None;
-                //
-                //_receivePort.Open();
-                //
-                //if (_receivePort.IsOpen)
-                //{
-                //    Log("Receiver Port is open.");
-                //}
+                Log("Connecting receiver port...");
+                _receivePort = new SerialPort(frmSetup.Instance.ReceiverPort, frmSetup.Instance.ReceiverSerial);
+                _receivePort = new SerialPort("COM10");
+                _receivePort.DataReceived += new SerialDataReceivedEventHandler(portDataReceiverReceived); 
+                _receivePort.Parity = Parity.None;
+                _receivePort.StopBits = StopBits.One;
+                _receivePort.DataBits = 8;
+                _receivePort.Handshake = Handshake.None;
+
+                _receivePort.Open();
+
+                if (_receivePort.IsOpen)
+                {
+                    Log("Receiver Port is open.");
+                }
 
                 Log("Connecting sender port...");
 
                 _sendPort = new SerialPort(frmSetup.Instance.SenderPort, frmSetup.Instance.SenderSerial);
+                _sendPort = new SerialPort("COM8");
                 _sendPort.DataReceived += new SerialDataReceivedEventHandler(portDataSendReceived);
                 _sendPort.Parity = Parity.None;
                 _sendPort.StopBits = StopBits.One;
                 _sendPort.DataBits = 8;
                 _sendPort.Handshake = Handshake.None;
-                
+
                 _sendPort.Open();
 
                 if (_sendPort.IsOpen)
@@ -94,8 +96,8 @@ namespace Teste
                     Log("Sender Port is open.");
                 }
 
-                //if (_receivePort.IsOpen && _sendPort.IsOpen)
-                if (_sendPort.IsOpen)
+                if (_receivePort.IsOpen && _sendPort.IsOpen)
+                    //if (_sendPort.IsOpen)
                     connected = true;
 
                 simpleButton2.Enabled = connected;
@@ -127,7 +129,7 @@ namespace Teste
 
                 Log("Desconnecting...");
 
-                //_receivePort.Close();
+                _receivePort.Close();
                 _sendPort.Close();
 
                 simpleButton2.Enabled = connected;
@@ -147,7 +149,7 @@ namespace Teste
             string msg = string.Format("[{0}]: {1}\r\n", DateTime.Now, log);
             Debug.WriteLine(msg);
 
-            //lock(_lock)
+            //lock (_lock)
             //{
             //    memoEdit2.Text += msg;
             //    memoEdit2.SelectionStart = memoEdit2.Text.Length;
@@ -184,7 +186,7 @@ namespace Teste
                 sync.Post(f =>
                 {
                     Log("RPM: " + Convert.ToString(_rpm));
-                    frmAnalyzeRPM.Instance.SetData(_rpm);
+                    frmAnalyzeRPM.Instance.SetData(_rpm); 
                 }, _rpm);
             }
         }

@@ -43,6 +43,7 @@
             this.colProperty6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProperty7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colProperty8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProperty9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -109,9 +110,12 @@
             this.colProperty5,
             this.colProperty6,
             this.colProperty7,
-            this.colProperty8});
+            this.colProperty8,
+            this.colProperty9});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // colProperty0
             // 
@@ -194,6 +198,14 @@
             this.colProperty8.VisibleIndex = 8;
             this.colProperty8.Width = 54;
             // 
+            // colProperty9
+            // 
+            this.colProperty9.Caption = "Remover";
+            this.colProperty9.FieldName = "Property9";
+            this.colProperty9.Name = "colProperty9";
+            this.colProperty9.Visible = true;
+            this.colProperty9.VisibleIndex = 9;
+            // 
             // panelControl2
             // 
             this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(44)))));
@@ -225,7 +237,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(304, 36);
             this.simpleButton1.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Iniciar Teste Estático";
+            this.simpleButton1.Text = "Adicionar Teste Estático";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // frmAnalyzelayoutControl1ConvertedLayout
@@ -250,7 +262,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(325, 36);
             this.simpleButton2.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton2.TabIndex = 4;
-            this.simpleButton2.Text = "Iniciar Teste Dinâmico";
+            this.simpleButton2.Text = "Adicionar Teste Dinâmico";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
@@ -404,5 +416,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn colProperty9;
     }
 }

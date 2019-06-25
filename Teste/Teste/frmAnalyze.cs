@@ -8,6 +8,7 @@ using OfficeOpenXml.Drawing;
 using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace Teste
 {
@@ -26,10 +27,26 @@ namespace Teste
         }
 
         private bool _initTest = false;
+        private DataTable _dt = null;
+        Random random = null;
 
         public frmAnalyze()
         {
             InitializeComponent();
+
+            _dt = new DataTable();
+            random = new Random();
+
+            _dt.Columns.Add("Property0", typeof(string));
+            _dt.Columns.Add("Property1", typeof(string));
+            _dt.Columns.Add("Property2", typeof(string));
+            _dt.Columns.Add("Property3", typeof(string));
+            _dt.Columns.Add("Property4", typeof(string));
+            _dt.Columns.Add("Property5", typeof(string));
+            _dt.Columns.Add("Property6", typeof(string));
+            _dt.Columns.Add("Property7", typeof(string));
+            _dt.Columns.Add("Property8", typeof(string));
+            _dt.Columns.Add("Property9", typeof(string));
 
             //simpleButton3.Enabled = false;
         }
@@ -47,11 +64,12 @@ namespace Teste
             dt.Columns.Add("Property6", typeof(string));
             dt.Columns.Add("Property7", typeof(string));
             dt.Columns.Add("Property8", typeof(string));
+            dt.Columns.Add("Property9", typeof(string));
 
             double forcaTracao = frmConnection.Instance.Tracao;
             double forcaTorque = frmConnection.Instance.Torque;
             int rpm = frmConnection.Instance.RPM;
-            rpm = 1000;
+            rpm = random.Next(0, 1000);
 
             double diametro = frmSetup.Instance.HelixDiameter;
             double fd = frmSetup.Instance.DragForce;
@@ -74,7 +92,7 @@ namespace Teste
             double coeficientePotencia = potencia / (densidade * Math.Pow(rps, 3) * Math.Pow(diametro, 5));
             double eficienciaHelice = j * (coeficienteTracao / coeficientePotencia);
 
-            dt.Rows.Add(rpm, "Dinâmico", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao);
+            _dt.Rows.Add(rpm, "Dinâmico", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao, "Remover");
 
             return dt;
         }
@@ -83,22 +101,22 @@ namespace Teste
         {
             DataTable dt = new DataTable();
 
-            dt.Columns.Add("Property0", typeof(string));
-            dt.Columns.Add("Property1", typeof(string));
-            dt.Columns.Add("Property2", typeof(string));
-            dt.Columns.Add("Property3", typeof(string));
-            dt.Columns.Add("Property4", typeof(string));
-            dt.Columns.Add("Property5", typeof(string));
-            dt.Columns.Add("Property6", typeof(string));
-            dt.Columns.Add("Property7", typeof(string));
-            dt.Columns.Add("Property8", typeof(string));
+            //dt.Columns.Add("Property0", typeof(string));
+            //dt.Columns.Add("Property1", typeof(string));
+            //dt.Columns.Add("Property2", typeof(string));
+            //dt.Columns.Add("Property3", typeof(string));
+            //dt.Columns.Add("Property4", typeof(string));
+            //dt.Columns.Add("Property5", typeof(string));
+            //dt.Columns.Add("Property6", typeof(string));
+            //dt.Columns.Add("Property7", typeof(string));
+            //dt.Columns.Add("Property8", typeof(string));
 
             //for (int i = 0; i < 8; i++)
 
             double forcaTracao = frmConnection.Instance.Tracao;
             double forcaTorque = frmConnection.Instance.Torque;
             int rpm = frmConnection.Instance.RPM;
-            rpm = 1000;
+            rpm = random.Next(0, 1000);
 
             double diametro = frmSetup.Instance.HelixDiameter;
             double fd = frmSetup.Instance.DragForce;
@@ -117,9 +135,9 @@ namespace Teste
             double coeficientePotencia = potencia / (densidade * Math.Pow(rps, 3) * Math.Pow(diametro, 5));
             double eficienciaHelice = j * (coeficienteTracao / coeficientePotencia);
             
-            dt.Rows.Add(rpm, "Estático", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao);
-
-
+            _dt.Rows.Add(rpm, "Estático", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao, "Remover");
+            dt.DefaultView.Sort = "Property0 asc";
+            dt = _dt.DefaultView.ToTable();
             return dt;
         }
 
@@ -141,6 +159,7 @@ namespace Teste
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], obj[6].ToString());
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[7], obj[7].ToString());
                     gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[8], obj[8].ToString());
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[9], obj[9].ToString());
                     gridView1.UpdateCurrentRow();
                 }
 
@@ -214,7 +233,7 @@ namespace Teste
 
                 chart.Legend.Border.LineStyle = eLineStyle.Solid;
                 chart.Legend.Border.Fill.Style = eFillStyle.SolidFill;
-                chart.Legend.Border.Fill.Color = Color.DarkBlue;
+                //chart.Legend.Border.Fill.Color = Color.DarkBlue;
 
                 //Switch the PageLayoutView back to normal
                 worksheetRPM.View.PageLayoutView = false;
@@ -315,36 +334,43 @@ namespace Teste
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Property0", typeof(string));
-            dt.Columns.Add("Property1", typeof(string));
-            dt.Columns.Add("Property2", typeof(string));
-            dt.Columns.Add("Property3", typeof(string));
-            dt.Columns.Add("Property4", typeof(string));
-            dt.Columns.Add("Property5", typeof(string));
-            dt.Columns.Add("Property6", typeof(string));
-            dt.Columns.Add("Property7", typeof(string));
-            dt.Columns.Add("Property8", typeof(string));
-
-            gridControl1.DataSource = dt;
+            gridControl1.DataSource = _dt;
             ShowGrid(CreateStaticData());
+
+            
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Property0", typeof(string));
-            dt.Columns.Add("Property1", typeof(string));
-            dt.Columns.Add("Property2", typeof(string));
-            dt.Columns.Add("Property3", typeof(string));
-            dt.Columns.Add("Property4", typeof(string));
-            dt.Columns.Add("Property5", typeof(string));
-            dt.Columns.Add("Property6", typeof(string));
-            dt.Columns.Add("Property7", typeof(string));
-            dt.Columns.Add("Property8", typeof(string));
-
-            gridControl1.DataSource = dt;
+            gridControl1.DataSource = _dt;
             ShowGrid(CreateDinamicData());
+
+            _dt.DefaultView.Sort = "Property0 asc";
+            _dt = _dt.DefaultView.ToTable();
         }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (e.Column.FieldName == "Property9")
+            {
+                GridHitInfo hitInfo = gridView1.CalcHitInfo(new Point(e.X, e.Y));
+                _dt.Rows[hitInfo.RowHandle].Delete();
+            }
+        }
+
+        //private void gridView1_Sorting(object sender, GridViewSortEventArgs e)
+        //{
+
+        //}
     }
+
+    //GridHitInfo hitInfo = gridView1.CalcHitInfo(new Point(e.X, e.Y));
+
+    //if (((e.Button & MouseButtons.Left) != 0) && (hitInfo.InRowCell))
+    //{
+    //    if (gridView1.GetRowCellDisplayText(hitInfo.RowHandle, hitInfo.Column) == "Remover")
+    //    {
+    //        _dt.Rows[hitInfo.RowHandle].Delete();
+    //    }
+    //}
 }
