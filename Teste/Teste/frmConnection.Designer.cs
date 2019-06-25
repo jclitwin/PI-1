@@ -46,6 +46,7 @@
             this.simpleButton2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -264,5 +265,6 @@
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private DevExpress.XtraEditors.MemoEdit memoEdit2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
