@@ -38,6 +38,13 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.frmSetuplayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -49,13 +56,10 @@
             this.tabPane1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -63,6 +67,10 @@
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmSetuplayoutControl1ConvertedLayout)).BeginInit();
             this.frmSetuplayoutControl1ConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -72,10 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).BeginInit();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -120,6 +126,10 @@
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Conexão";
+            this.tabNavigationPage1.Controls.Add(this.comboBoxEdit3);
+            this.tabNavigationPage1.Controls.Add(this.labelControl7);
+            this.tabNavigationPage1.Controls.Add(this.labelControl8);
+            this.tabNavigationPage1.Controls.Add(this.comboBoxEdit4);
             this.tabNavigationPage1.Controls.Add(this.comboBoxEdit2);
             this.tabNavigationPage1.Controls.Add(this.labelControl3);
             this.tabNavigationPage1.Controls.Add(this.labelControl1);
@@ -143,17 +153,17 @@
             // 
             this.labelControl3.Location = new System.Drawing.Point(15, 13);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(35, 13);
+            this.labelControl3.Size = new System.Drawing.Size(126, 13);
             this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Portas:";
+            this.labelControl3.Text = "Porta para Recebimento:";
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(15, 58);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(26, 13);
+            this.labelControl1.Size = new System.Drawing.Size(127, 13);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Rate:";
+            this.labelControl1.Text = "Serial para Recebimento:";
             // 
             // comboBoxEdit1
             // 
@@ -171,6 +181,66 @@
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit1.Size = new System.Drawing.Size(109, 20);
             this.comboBoxEdit1.TabIndex = 0;
+            // 
+            // tabNavigationPage2
+            // 
+            this.tabNavigationPage2.Caption = "Variáveis Definadas";
+            this.tabNavigationPage2.Controls.Add(this.textEdit3);
+            this.tabNavigationPage2.Controls.Add(this.labelControl6);
+            this.tabNavigationPage2.Controls.Add(this.textEdit2);
+            this.tabNavigationPage2.Controls.Add(this.labelControl5);
+            this.tabNavigationPage2.Controls.Add(this.textEdit1);
+            this.tabNavigationPage2.Controls.Add(this.labelControl4);
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(646, 330);
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.EditValue = "5";
+            this.textEdit3.Location = new System.Drawing.Point(18, 127);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(277, 20);
+            this.textEdit3.TabIndex = 5;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(18, 108);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(114, 13);
+            this.labelControl6.TabIndex = 4;
+            this.labelControl6.Text = "Velocidade do Vento.:";
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.EditValue = "0";
+            this.textEdit2.Location = new System.Drawing.Point(18, 82);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(277, 20);
+            this.textEdit2.TabIndex = 3;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(18, 63);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(90, 13);
+            this.labelControl5.TabIndex = 2;
+            this.labelControl5.Text = "Força de Arrasto.:";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "14";
+            this.textEdit1.Location = new System.Drawing.Point(18, 37);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(277, 20);
+            this.textEdit1.TabIndex = 1;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(18, 18);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(103, 13);
+            this.labelControl4.TabIndex = 0;
+            this.labelControl4.Text = "Diâmetro da Hélice.:";
             // 
             // simpleButton1
             // 
@@ -276,65 +346,50 @@
             this.panelControl2item.TextSize = new System.Drawing.Size(0, 0);
             this.panelControl2item.TextVisible = false;
             // 
-            // tabNavigationPage2
+            // comboBoxEdit3
             // 
-            this.tabNavigationPage2.Caption = "Variáveis Definadas";
-            this.tabNavigationPage2.Controls.Add(this.textEdit3);
-            this.tabNavigationPage2.Controls.Add(this.labelControl6);
-            this.tabNavigationPage2.Controls.Add(this.textEdit2);
-            this.tabNavigationPage2.Controls.Add(this.labelControl5);
-            this.tabNavigationPage2.Controls.Add(this.textEdit1);
-            this.tabNavigationPage2.Controls.Add(this.labelControl4);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(646, 330);
+            this.comboBoxEdit3.EditValue = "Selecione a porta do Bluetooth";
+            this.comboBoxEdit3.Location = new System.Drawing.Point(15, 122);
+            this.comboBoxEdit3.Name = "comboBoxEdit3";
+            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit3.Size = new System.Drawing.Size(303, 20);
+            this.comboBoxEdit3.TabIndex = 7;
+            this.comboBoxEdit3.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.comboBoxEdit3_QueryPopUp);
             // 
-            // labelControl4
+            // labelControl7
             // 
-            this.labelControl4.Location = new System.Drawing.Point(18, 18);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(103, 13);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "Diâmetro da Hélice.:";
+            this.labelControl7.Location = new System.Drawing.Point(15, 103);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(87, 13);
+            this.labelControl7.TabIndex = 6;
+            this.labelControl7.Text = "Porta para Envio:";
             // 
-            // textEdit1
+            // labelControl8
             // 
-            this.textEdit1.EditValue = "14";
-            this.textEdit1.Location = new System.Drawing.Point(18, 37);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(277, 20);
-            this.textEdit1.TabIndex = 1;
+            this.labelControl8.Location = new System.Drawing.Point(15, 148);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(88, 13);
+            this.labelControl8.TabIndex = 5;
+            this.labelControl8.Text = "Serial para Envio:";
             // 
-            // textEdit2
+            // comboBoxEdit4
             // 
-            this.textEdit2.EditValue = "0";
-            this.textEdit2.Location = new System.Drawing.Point(18, 82);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(277, 20);
-            this.textEdit2.TabIndex = 3;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(18, 63);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(90, 13);
-            this.labelControl5.TabIndex = 2;
-            this.labelControl5.Text = "Força de Arrasto.:";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.EditValue = "5";
-            this.textEdit3.Location = new System.Drawing.Point(18, 127);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(277, 20);
-            this.textEdit3.TabIndex = 5;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(18, 108);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(114, 13);
-            this.labelControl6.TabIndex = 4;
-            this.labelControl6.Text = "Velocidade do Vento.:";
+            this.comboBoxEdit4.EditValue = "Selecione a frequência";
+            this.comboBoxEdit4.Location = new System.Drawing.Point(15, 167);
+            this.comboBoxEdit4.Name = "comboBoxEdit4";
+            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit4.Properties.Items.AddRange(new object[] {
+            "1200",
+            "2400",
+            "9600",
+            "19200",
+            "28800"});
+            this.comboBoxEdit4.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit4.Size = new System.Drawing.Size(109, 20);
+            this.comboBoxEdit4.TabIndex = 4;
             // 
             // frmSetup
             // 
@@ -352,6 +407,11 @@
             this.tabNavigationPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            this.tabNavigationPage2.ResumeLayout(false);
+            this.tabNavigationPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmSetuplayoutControl1ConvertedLayout)).EndInit();
             this.frmSetuplayoutControl1ConvertedLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -361,11 +421,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).EndInit();
-            this.tabNavigationPage2.ResumeLayout(false);
-            this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +455,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
     }
 }

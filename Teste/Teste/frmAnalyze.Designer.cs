@@ -46,15 +46,17 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.frmAnalyzelayoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.groupControl1item = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.simpleButton3item = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton1item = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl2item = new DevExpress.XtraLayout.LayoutControlGroup();
             this.panelControl2item = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl1item = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.simpleButton3item = new DevExpress.XtraLayout.LayoutControlItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -66,11 +68,12 @@
             this.frmAnalyzelayoutControl1ConvertedLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1item)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleButton3item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1item)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton3item)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -81,7 +84,7 @@
             this.panelControl1.Controls.Add(this.gridControl1);
             this.panelControl1.Location = new System.Drawing.Point(12, 47);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(633, 346);
+            this.panelControl1.Size = new System.Drawing.Size(633, 306);
             this.panelControl1.TabIndex = 0;
             // 
             // gridControl1
@@ -90,7 +93,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(633, 346);
+            this.gridControl1.Size = new System.Drawing.Size(633, 306);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -179,7 +182,7 @@
             this.colProperty7.FieldName = "Property7";
             this.colProperty7.Name = "colProperty7";
             this.colProperty7.Visible = true;
-            this.colProperty7.VisibleIndex = 6;
+            this.colProperty7.VisibleIndex = 7;
             this.colProperty7.Width = 42;
             // 
             // colProperty8
@@ -188,7 +191,7 @@
             this.colProperty8.FieldName = "Property8";
             this.colProperty8.Name = "colProperty8";
             this.colProperty8.Visible = true;
-            this.colProperty8.VisibleIndex = 7;
+            this.colProperty8.VisibleIndex = 8;
             this.colProperty8.Width = 54;
             // 
             // panelControl2
@@ -217,27 +220,17 @@
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(12, 397);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 357);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(304, 36);
             this.simpleButton1.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
             this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Iniciar Teste";
+            this.simpleButton1.Text = "Iniciar Teste Estático";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(320, 397);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(325, 36);
-            this.simpleButton3.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Salvar Dados";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmAnalyzelayoutControl1ConvertedLayout
             // 
+            this.frmAnalyzelayoutControl1ConvertedLayout.Controls.Add(this.simpleButton2);
             this.frmAnalyzelayoutControl1ConvertedLayout.Controls.Add(this.simpleButton3);
             this.frmAnalyzelayoutControl1ConvertedLayout.Controls.Add(this.simpleButton1);
             this.frmAnalyzelayoutControl1ConvertedLayout.Controls.Add(this.panelControl2);
@@ -248,6 +241,28 @@
             this.frmAnalyzelayoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
             this.frmAnalyzelayoutControl1ConvertedLayout.Size = new System.Drawing.Size(657, 445);
             this.frmAnalyzelayoutControl1ConvertedLayout.TabIndex = 20;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(320, 357);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(325, 36);
+            this.simpleButton2.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
+            this.simpleButton2.TabIndex = 4;
+            this.simpleButton2.Text = "Iniciar Teste Dinâmico";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(12, 397);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(633, 36);
+            this.simpleButton3.StyleController = this.frmAnalyzelayoutControl1ConvertedLayout;
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "Salvar Dados";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // layoutControlGroup1
             // 
@@ -263,27 +278,19 @@
             // 
             this.groupControl1item.GroupBordersVisible = false;
             this.groupControl1item.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.simpleButton3item,
             this.simpleButton1item,
-            this.groupControl2item});
+            this.groupControl2item,
+            this.layoutControlItem1,
+            this.simpleButton3item});
             this.groupControl1item.Location = new System.Drawing.Point(0, 0);
             this.groupControl1item.Name = "groupControl1item";
             this.groupControl1item.Size = new System.Drawing.Size(637, 425);
             this.groupControl1item.Text = "layoutControlGroup1";
             // 
-            // simpleButton3item
-            // 
-            this.simpleButton3item.Control = this.simpleButton3;
-            this.simpleButton3item.Location = new System.Drawing.Point(308, 385);
-            this.simpleButton3item.Name = "simpleButton3item";
-            this.simpleButton3item.Size = new System.Drawing.Size(329, 40);
-            this.simpleButton3item.TextSize = new System.Drawing.Size(0, 0);
-            this.simpleButton3item.TextVisible = false;
-            // 
             // simpleButton1item
             // 
             this.simpleButton1item.Control = this.simpleButton1;
-            this.simpleButton1item.Location = new System.Drawing.Point(0, 385);
+            this.simpleButton1item.Location = new System.Drawing.Point(0, 345);
             this.simpleButton1item.Name = "simpleButton1item";
             this.simpleButton1item.Size = new System.Drawing.Size(308, 40);
             this.simpleButton1item.TextSize = new System.Drawing.Size(0, 0);
@@ -297,7 +304,7 @@
             this.panelControl1item});
             this.groupControl2item.Location = new System.Drawing.Point(0, 0);
             this.groupControl2item.Name = "groupControl2item";
-            this.groupControl2item.Size = new System.Drawing.Size(637, 385);
+            this.groupControl2item.Size = new System.Drawing.Size(637, 345);
             this.groupControl2item.Text = "layoutControlGroup1";
             // 
             // panelControl2item
@@ -317,9 +324,27 @@
             this.panelControl1item.Control = this.panelControl1;
             this.panelControl1item.Location = new System.Drawing.Point(0, 35);
             this.panelControl1item.Name = "panelControl1item";
-            this.panelControl1item.Size = new System.Drawing.Size(637, 350);
+            this.panelControl1item.Size = new System.Drawing.Size(637, 310);
             this.panelControl1item.TextSize = new System.Drawing.Size(0, 0);
             this.panelControl1item.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.simpleButton2;
+            this.layoutControlItem1.Location = new System.Drawing.Point(308, 345);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(329, 40);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // simpleButton3item
+            // 
+            this.simpleButton3item.Control = this.simpleButton3;
+            this.simpleButton3item.Location = new System.Drawing.Point(0, 385);
+            this.simpleButton3item.Name = "simpleButton3item";
+            this.simpleButton3item.Size = new System.Drawing.Size(637, 40);
+            this.simpleButton3item.TextSize = new System.Drawing.Size(0, 0);
+            this.simpleButton3item.TextVisible = false;
             // 
             // frmAnalyze
             // 
@@ -339,11 +364,12 @@
             this.frmAnalyzelayoutControl1ConvertedLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1item)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleButton3item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleButton1item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2item)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1item)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleButton3item)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,5 +402,7 @@
         private DevExpress.XtraLayout.LayoutControlItem panelControl2item;
         private DevExpress.XtraLayout.LayoutControlItem panelControl1item;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

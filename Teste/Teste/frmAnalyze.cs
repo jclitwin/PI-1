@@ -34,7 +34,7 @@ namespace Teste
             //simpleButton3.Enabled = false;
         }
 
-        private DataTable CreateData()
+        private DataTable CreateDinamicData()
         {
             DataTable dt = new DataTable();
 
@@ -48,17 +48,14 @@ namespace Teste
             dt.Columns.Add("Property7", typeof(string));
             dt.Columns.Add("Property8", typeof(string));
 
-            //for (int i = 0; i < 8; i++)
-
-            //Variaveis que serão lidas
             double forcaTracao = frmConnection.Instance.Tracao;
             double forcaTorque = frmConnection.Instance.Torque;
             int rpm = frmConnection.Instance.RPM;
+            rpm = 1000;
 
             double diametro = frmSetup.Instance.HelixDiameter;
             double fd = frmSetup.Instance.DragForce;
-            double velocidade = 0;
-            velocidade = frmSetup.Instance.WindSpeed;
+            double velocidade = frmSetup.Instance.WindSpeed;
 
             double comprimentoHaste = 17.25f;
 
@@ -76,17 +73,52 @@ namespace Teste
             double coeficienteTorque = torqueResultante / (densidade * Math.Pow(rps, 2) * Math.Pow(diametro, 5));
             double coeficientePotencia = potencia / (densidade * Math.Pow(rps, 3) * Math.Pow(diametro, 5));
             double eficienciaHelice = j * (coeficienteTracao / coeficientePotencia);
+
+            dt.Rows.Add(rpm, "Dinâmico", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao);
+
+            return dt;
+        }
+
+        private DataTable CreateStaticData()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Property0", typeof(string));
+            dt.Columns.Add("Property1", typeof(string));
+            dt.Columns.Add("Property2", typeof(string));
+            dt.Columns.Add("Property3", typeof(string));
+            dt.Columns.Add("Property4", typeof(string));
+            dt.Columns.Add("Property5", typeof(string));
+            dt.Columns.Add("Property6", typeof(string));
+            dt.Columns.Add("Property7", typeof(string));
+            dt.Columns.Add("Property8", typeof(string));
+
+            //for (int i = 0; i < 8; i++)
+
+            double forcaTracao = frmConnection.Instance.Tracao;
+            double forcaTorque = frmConnection.Instance.Torque;
+            int rpm = frmConnection.Instance.RPM;
+            rpm = 1000;
+
+            double diametro = frmSetup.Instance.HelixDiameter;
+            double fd = frmSetup.Instance.DragForce;
+
+            double comprimentoHaste = 17.25f;
+
+            double rps = rpm / 60;
+            double densidade = 1.225;
+            double tracao = forcaTracao + fd;
+            double torqueResultante = forcaTorque * comprimentoHaste;
+            double potencia = 2 * Math.PI * rps * torqueResultante;
+            double velocidadeCorrecao = 0;
+            double j = 0;
+            double coeficienteTracao = tracao / (densidade * Math.Pow(rps, 2) * Math.Pow(diametro, 4));
+            double coeficienteTorque = torqueResultante / (densidade * Math.Pow(rps, 2) * Math.Pow(diametro, 5));
+            double coeficientePotencia = potencia / (densidade * Math.Pow(rps, 3) * Math.Pow(diametro, 5));
+            double eficienciaHelice = j * (coeficienteTracao / coeficientePotencia);
             
             dt.Rows.Add(rpm, "Estático", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao);
 
-            velocidade = frmSetup.Instance.WindSpeed;
-
-            correcao = tracao / (densidade * ap * Math.Pow(velocidade, 2));
-            velocidadeCorrecao = velocidade * (1 - (correcao * (ap / awt)) / (2 * Math.Sqrt(1 + 2 * correcao)));
-            j = velocidadeCorrecao / (rps * diametro);
-            eficienciaHelice = j * (coeficienteTracao / coeficientePotencia);
-
-            dt.Rows.Add(rpm, "Dinâmico", velocidadeCorrecao, j, eficienciaHelice, coeficienteTracao, coeficienteTorque, torqueResultante, tracao);
 
             return dt;
         }
@@ -295,7 +327,24 @@ namespace Teste
             dt.Columns.Add("Property8", typeof(string));
 
             gridControl1.DataSource = dt;
-            ShowGrid(CreateData());
+            ShowGrid(CreateStaticData());
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Property0", typeof(string));
+            dt.Columns.Add("Property1", typeof(string));
+            dt.Columns.Add("Property2", typeof(string));
+            dt.Columns.Add("Property3", typeof(string));
+            dt.Columns.Add("Property4", typeof(string));
+            dt.Columns.Add("Property5", typeof(string));
+            dt.Columns.Add("Property6", typeof(string));
+            dt.Columns.Add("Property7", typeof(string));
+            dt.Columns.Add("Property8", typeof(string));
+
+            gridControl1.DataSource = dt;
+            ShowGrid(CreateDinamicData());
         }
     }
 }

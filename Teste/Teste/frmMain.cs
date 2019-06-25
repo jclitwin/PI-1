@@ -39,7 +39,7 @@ namespace Teste
             }
         }
 
-        public bool WriteConfig(string port, int serial, double helixDiameter, double dragForce, double windSpeed)
+        public bool WriteConfig(string portReceiver, int serialReceiver, string portSender, int serialSender, double helixDiameter, double dragForce, double windSpeed)
         {
             var parser = new FileIniDataParser();
             if (File.Exists(CONFIG_FILE_NAME))
@@ -48,8 +48,10 @@ namespace Teste
             }
 
             IniData data = new IniData();
-            data["Connection"]["Port"] = port;
-            data["Connection"]["Serial"] = serial.ToString();
+            data["Connection"]["PortReceiver"] = portReceiver;
+            data["Connection"]["SerialReceiver"] = serialReceiver.ToString();
+            data["Connection"]["PortSender"] = portSender;
+            data["Connection"]["SerialSender"] = serialSender.ToString();
             data["Connection"]["HelixDiameter"] = helixDiameter.ToString();
             data["Connection"]["DragForce"] = dragForce.ToString();
             data["Connection"]["WindSpeed"] = windSpeed.ToString();
@@ -74,24 +76,34 @@ namespace Teste
                     return false;
                 }
 
-                string port = data["Connection"]["Port"].Replace("\"", "");
-                int serial = Convert.ToInt32(data["Connection"]["Serial"]);
+                string portReceiver = data["Connection"]["PortReceiver"].Replace("\"", "");
+                int serialReceiver = Convert.ToInt32(data["Connection"]["SerialReceiver"]);
+
+                string portSender = data["Connection"]["PortSender"].Replace("\"", "");
+                int serialSender = Convert.ToInt32(data["Connection"]["SerialSender"]);
 
                 double helixDiameter = Convert.ToDouble(data["Connection"]["HelixDiameter"]);
                 double dragForce = Convert.ToDouble(data["Connection"]["DragForce"]);
                 double windSpeed = Convert.ToDouble(data["Connection"]["WindSpeed"]);
 
-                frmSetup.Instance.Port = port;
-                frmSetup.Instance.Serial = serial;
+                frmSetup.Instance.ReceiverPort = portReceiver;
+                frmSetup.Instance.ReceiverSerial = serialReceiver;
+
+                frmSetup.Instance.SenderPort = portSender;
+                frmSetup.Instance.SenderSerial = serialSender;
 
                 frmSetup.Instance.HelixDiameter = helixDiameter;
                 frmSetup.Instance.DragForce = dragForce;
                 frmSetup.Instance.WindSpeed = windSpeed;
 
-                frmSetup.Instance.LoadSerialPort();
-                frmSetup.Instance.GetPort();
-                frmSetup.Instance.GetSerial();
+                frmSetup.Instance.LoadSerialPortReceiver();
+                frmSetup.Instance.LoadSerialPortSender();
 
+                frmSetup.Instance.GetPortReceiver();
+                frmSetup.Instance.GetSerialReceiver();
+
+                frmSetup.Instance.GetPortSender();
+                frmSetup.Instance.GetSerialSender();
             }
             else
             {

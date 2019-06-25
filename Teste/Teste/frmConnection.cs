@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
+using System.Diagnostics;
 
 namespace Teste
 {
@@ -19,7 +20,8 @@ namespace Teste
             }
         }
 
-        SerialPort serial;
+        SerialPort _receivePort;
+        SerialPort _sendPort;
         SynchronizationContext sync = null;
 
         private double _torque = 0.0;
@@ -47,6 +49,8 @@ namespace Teste
 
         public bool connected = false;
 
+        private readonly object _lock= new object();
+
         public frmConnection()
         {
             InitializeComponent();
@@ -59,21 +63,40 @@ namespace Teste
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                Log("Connecting...");
-                serial = new SerialPort(frmSetup.Instance.Port, frmSetup.Instance.Serial);
-                //serial = new SerialPort("COM8", 9600);
-                serial.DataReceived += new SerialDataReceivedEventHandler(portDataReceived);
-                serial.Parity = Parity.None;
-                serial.StopBits = StopBits.One;
-                serial.DataBits = 8;
-                serial.Handshake = Handshake.None;
+                //Log("Connecting receiver port...");
+                //_receivePort = new SerialPort(frmSetup.Instance.ReceiverPort, frmSetup.Instance.ReceiverSerial);
+                //_receivePort.DataReceived += new SerialDataReceivedEventHandler(portDataReceiverReceived);
+                //_receivePort.Parity = Parity.None;
+                //_receivePort.StopBits = StopBits.One;
+                //_receivePort.DataBits = 8;
+                //_receivePort.Handshake = Handshake.None;
+                //
+                //_receivePort.Open();
+                //
+                //if (_receivePort.IsOpen)
+                //{
+                //    Log("Receiver Port is open.");
+                //}
 
-                serial.Open();
-                if (serial.IsOpen)
+                Log("Connecting sender port...");
+
+                _sendPort = new SerialPort(frmSetup.Instance.SenderPort, frmSetup.Instance.SenderSerial);
+                _sendPort.DataReceived += new SerialDataReceivedEventHandler(portDataSendReceived);
+                _sendPort.Parity = Parity.None;
+                _sendPort.StopBits = StopBits.One;
+                _sendPort.DataBits = 8;
+                _sendPort.Handshake = Handshake.None;
+                
+                _sendPort.Open();
+
+                if (_sendPort.IsOpen)
                 {
-                    Log("Port is open.");
-                    connected = true;
+                    Log("Sender Port is open.");
                 }
+
+                //if (_receivePort.IsOpen && _sendPort.IsOpen)
+                if (_sendPort.IsOpen)
+                    connected = true;
 
                 simpleButton2.Enabled = connected;
                 simpleButton1.Enabled = !connected;
@@ -87,6 +110,14 @@ namespace Teste
             }
         }
 
+        private void portDataSendReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp1 = (SerialPort)sender;
+            string msg = sp1.ReadLine();
+
+            Log(string.Format("Debug: {0}", msg));
+        }
+
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -96,7 +127,8 @@ namespace Teste
 
                 Log("Desconnecting...");
 
-                serial.Close();
+                //_receivePort.Close();
+                _sendPort.Close();
 
                 simpleButton2.Enabled = connected;
                 simpleButton1.Enabled = !connected;
@@ -113,12 +145,17 @@ namespace Teste
         public void Log(string log)
         {
             string msg = string.Format("[{0}]: {1}\r\n", DateTime.Now, log);
-            memoEdit2.Text += msg;
-            memoEdit2.SelectionStart = memoEdit2.Text.Length;
-            memoEdit2.ScrollToCaret();
+            Debug.WriteLine(msg);
+
+            //lock(_lock)
+            //{
+            //    memoEdit2.Text += msg;
+            //    memoEdit2.SelectionStart = memoEdit2.Text.Length;
+            //    memoEdit2.ScrollToCaret();
+            //}
         }
 
-        private void portDataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void portDataReceiverReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp1 = (SerialPort)sender;
             msg = sp1.ReadLine();
@@ -138,7 +175,6 @@ namespace Teste
                     frmAnalyzeTorque.Instance.SetData(_torque);
                 }, _torque);
 
-
                 sync.Post(f =>
                 {
                     Log("Tração: " + Convert.ToString(_tracao));
@@ -151,13 +187,12 @@ namespace Teste
                     frmAnalyzeRPM.Instance.SetData(_rpm);
                 }, _rpm);
             }
-
         }
 
         public void SendRPM(double value)
         {
             int speedValue = Convert.ToInt32((Convert.ToInt32(value) * 100) / 9.7751711);
-            serial.Write(Convert.ToString(speedValue) + '\n');
+            _sendPort.Write(Convert.ToString(speedValue) + '\n');
             //serial.Write(Convert.ToString(value) + '\n');
         }
     }

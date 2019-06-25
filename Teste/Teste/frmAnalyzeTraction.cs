@@ -57,7 +57,7 @@ namespace Teste
             timer1.Tick += new EventHandler(timer_Tick);
             _rnd = new Random();
 
-            timer1.Start();
+            //timer1.Start();
         }
 
         public void StartTest()
@@ -86,12 +86,12 @@ namespace Teste
         {
             DateTime now = DateTime.Now;
 
-            long ticks = _stopwatch.Elapsed.Seconds;
+            //long ticks = _stopwatch.Elapsed.Seconds;
 
             AnalyzeData data = new AnalyzeData();
             data.Now = now;
             data.Value = value;
-            data.Ticks = ticks;
+            data.Ticks = 0;
 
             _valuesLst.Add(data);
 
