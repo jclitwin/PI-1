@@ -248,7 +248,6 @@ namespace Teste
             SenderPort = comSender;
             SenderSerial = Convert.ToInt32(comboBoxEdit4.SelectedItem);
 
-
             HelixDiameter = Convert.ToDouble(textEdit1.Text);
             DragForce = Convert.ToDouble(textEdit2.Text);
             WindSpeed = Convert.ToDouble(textEdit3.Text);
@@ -259,11 +258,6 @@ namespace Teste
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             frmMain.Instance.GoHomePage();
-        }
-
-        private void tabPane1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBoxEdit3_QueryPopUp(object sender, CancelEventArgs e)

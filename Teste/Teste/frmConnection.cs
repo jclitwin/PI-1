@@ -76,13 +76,8 @@ namespace Teste
             {
                 if (_logs.Count > 0)
                 {
-                    //int processLogs = 10;
-
                     for (int i = 0; i < _logs.Count; i++)
                     {
-                        if (_logs.Count <= 0)
-                            break;
-
                         string msg = _logs.Dequeue();
                         if (!string.IsNullOrEmpty(msg))
                         {
@@ -190,13 +185,6 @@ namespace Teste
             {
                 _logs.Enqueue(log);
             }
-
-            //lock (_lock)
-            //{
-            //    memoEdit2.Text += msg;
-            //    memoEdit2.SelectionStart = memoEdit2.Text.Length;
-            //    memoEdit2.ScrollToCaret();
-            //}
         }
 
         private void portDataReceiverReceived(object sender, SerialDataReceivedEventArgs e)
@@ -237,7 +225,6 @@ namespace Teste
         {
             int speedValue = Convert.ToInt32((Convert.ToInt32(value) * 100) / 9.7751711);
             _sendPort.Write(Convert.ToString(speedValue) + '\n');
-            //serial.Write(Convert.ToString(value) + '\n');
         }
     }
 }
