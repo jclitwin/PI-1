@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -186,7 +186,7 @@ namespace Teste
                 int index = 0;
                 foreach (string s in portnames)
                 {
-                    if (s == ReceiverPort)
+                    if (s == SenderPort)
                     {
                         comboBoxEdit3.SelectedIndex = index;
                         return;
